@@ -67,7 +67,6 @@ def handle_message(update, context):
     text = str(update.message.text)
 
     # Print a log for debugging
-    print(f'User ({update.message.chat.id}) says: "{text}"')
     logger.debug(f'User ({update.message.chat.id}) says: "{text}"')
     try:
         municipality, hour = handle_response(update, text)
@@ -81,7 +80,7 @@ def handle_message(update, context):
 
 # Log errors
 def error(update, context):
-    print(f'Update {update} caused error {context.error}')
+    logger.debug(f'Update {update} caused error {context.error}')
 
 
 # Run the program

@@ -22,7 +22,7 @@ def load_api_information(municipality, hour=None, period=None):
     try:
         municipality_cod, province_cod, name = get_all_xls_codes(municipality)
     except ValueError:
-        logger.error(f'{DATA_ERROR_MESSAGE} city: {name}', exc_info=True)
+        logger.error(f'{DATA_ERROR_MESSAGE} city: {municipality}', exc_info=True)
         return VALUE_ERROR
 
     # Open connection
