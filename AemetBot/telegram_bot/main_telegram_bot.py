@@ -1,6 +1,8 @@
-from AemetBot.aemet.final_forecast import load_api_information
-from AemetBot.utils.logger import logger
-from AemetBot.telegram_bot.constants_bot import HELP_MESSAGE, ERROR_NUMERIC, TOKEN, \
+import sys
+sys.path.append('../')
+from aemet.final_forecast import load_api_information
+from utils.logger import logger
+from telegram_bot.constants_bot import HELP_MESSAGE, ERROR_NUMERIC, TOKEN, \
     ERROR_MUNICIPALITY, MUNICIPALITY_NAME_ERROR, START_MESSAGE, HOUR_PROBLEM
 from telegram.ext import *
 
