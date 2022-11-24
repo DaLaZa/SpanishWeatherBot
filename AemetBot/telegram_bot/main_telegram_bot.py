@@ -1,5 +1,7 @@
 import sys
-sys.path.append('../')
+sys.path.append('..')
+sys.path.append('../..')
+
 from aemet.final_forecast import load_api_information
 from utils.logger import logger
 from telegram_bot.constants_bot import HELP_MESSAGE, ERROR_NUMERIC, TOKEN, \
