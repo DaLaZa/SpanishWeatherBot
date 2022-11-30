@@ -48,22 +48,28 @@ def sky_condition_scheduled(scheduled_result, correct_value_date, current_hour, 
               scheduled_result[0]["prediccion"]["dia"][correct_value_date]["estadoCielo"]}
 
     sky_condition = SKY_CONDITION
-
+    sky_condition_found = False
     if first_hour is None:
         for key, value in ranges.items():
             if int(key) >= current_hour:
+                sky_condition_found = True
                 sky_condition = f'{sky_condition}{key}h: {value}\n'
     elif second_hour is None:
         for key, value in ranges.items():
             if first_hour < int(key):
                 raise ValueError
             elif first_hour == int(key):
+                sky_condition_found = True
                 sky_condition = f'{sky_condition}{key}h: {value}\n\n'
                 break
     else:
         for key, value in ranges.items():
             if first_hour <= int(key) <= second_hour:
+                sky_condition_found = True
                 sky_condition = f'{sky_condition}{key}h: {value}\n'
+
+    if not sky_condition_found:
+        raise ValueError
 
     return sky_condition
 
