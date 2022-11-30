@@ -2,6 +2,8 @@ import sqlite3
 from .constants import DATA_BASE_NAME
 
 
+# Definition: Create and initialize the database
+# Created: DAVID LAHUERTA ZAYAS
 def create_initialize_database():
     # Create community.db database
     conn = sqlite3.connect(DATA_BASE_NAME)
@@ -17,11 +19,19 @@ def create_initialize_database():
     conn.close()
 
 
+# Definition: Create database
+# Variables:
+#   cursor: Database cursor.
+# Created: DAVID LAHUERTA ZAYAS
 def create_data_base(cursor):
     cursor.execute("""CREATE TABLE IF NOT EXISTS communities (code TEXT PRIMARY KEY, community TEXT NOT NULL, 
         province TEXT NOT NULL, abbreviation TEXT NOT NULL)""")
 
 
+# Definition: Initialize database
+# Variables:
+#   cursor: Database cursor.
+# Created: DAVID LAHUERTA ZAYAS
 def initialize_data_base(cursor):
     cursor.execute("INSERT OR IGNORE INTO communities VALUES ('04', 'Andalucia', 'Almería', 'and'), "
                    "('11', 'Andalucia', 'Cádiz', 'and'),"
@@ -75,6 +85,10 @@ def initialize_data_base(cursor):
                    "('26', 'La Rioja', 'La Rioja', 'rio')")
 
 
+# Definition: Check if exists values
+# Variables:
+#   conn: Database connection.
+# Created: DAVID LAHUERTA ZAYAS
 def check_values(conn):
     cursor = conn.cursor()
     cursor.execute(f'SELECT * FROM communities LIMIT 1')
