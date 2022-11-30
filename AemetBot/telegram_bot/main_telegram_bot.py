@@ -89,12 +89,12 @@ def handle_response(update, args):
         second_hour = second_hour.split(":")[0]
 
         if second_hour == '':
-            return municipality, first_hour, None
+            return municipality, int(first_hour), None
         if not second_hour.isnumeric():
             update.message.reply_text(ERROR_NUMERIC)
             return []
     except IndexError:
-        return municipality, first_hour, None
+        return municipality, int(first_hour), None
 
     if int(first_hour) > 24 or int(second_hour) > 24:
         update.message.reply_text(HOUR_PROBLEM)

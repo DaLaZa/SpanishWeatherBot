@@ -110,3 +110,603 @@ KeyError: 'datos'
 2022-12-01 00:12:39,357; Stopping Updater and Dispatcher...
 2022-12-01 00:12:39,357; Requesting Dispatcher to stop...
 2022-12-01 00:12:39,517; Exiting immediately!
+2022-12-01 00:35:35,006; Setting singleton dispatcher as <telegram.ext.dispatcher.Dispatcher object at 0x7f79a45deb60>
+2022-12-01 00:35:35,011; Scheduler started
+2022-12-01 00:35:35,012; Entering: get_me
+2022-12-01 00:35:35,015; Looking for jobs to run
+2022-12-01 00:35:35,015; No jobs; waiting until a job is added
+2022-12-01 00:35:35,188; {'first_name': 'SpainWeatherBot', 'can_read_all_group_messages': False, 'can_join_groups': True, 'id': 5667292163, 'supports_inline_queries': False, 'username': 'SpainWeatherBot', 'is_bot': True}
+2022-12-01 00:35:35,188; Exiting: get_me
+2022-12-01 00:35:35,189; Bot:5667292163:dispatcher - started
+2022-12-01 00:35:35,190; Bot:5667292163:updater - started
+2022-12-01 00:35:35,191; Updater thread started (polling)
+2022-12-01 00:35:35,191; Start network loop retry bootstrap del webhook
+2022-12-01 00:35:35,191; Deleting webhook
+2022-12-01 00:35:35,192; Entering: delete_webhook
+2022-12-01 00:35:35,192; Waiting for Dispatcher and polling to start
+2022-12-01 00:35:35,196; Dispatcher started
+2022-12-01 00:35:35,242; True
+2022-12-01 00:35:35,243; Exiting: delete_webhook
+2022-12-01 00:35:35,243; Bootstrap done
+2022-12-01 00:35:35,243; Start network loop retry getting Updates
+2022-12-01 00:35:35,243; Entering: get_updates
+2022-12-01 00:35:45,291; No new updates found.
+2022-12-01 00:35:45,291; []
+2022-12-01 00:35:45,291; Exiting: get_updates
+2022-12-01 00:35:46,291; Entering: get_updates
+2022-12-01 00:35:53,771; Getting updates: [619989848]
+2022-12-01 00:35:53,773; [<telegram.update.Update object at 0x7f797a13a680>]
+2022-12-01 00:35:53,774; Exiting: get_updates
+2022-12-01 00:35:53,774; Processing Update: {'update_id': 619989848, 'message': {'caption_entities': [], 'chat': {'username': 'zdl95', 'type': 'private', 'first_name': 'Deivid', 'id': 312498373}, 'group_chat_created': False, 'channel_chat_created': False, 'new_chat_members': [], 'entities': [{'offset': 0, 'length': 2, 'type': 'bot_command'}], 'supergroup_chat_created': False, 'delete_chat_photo': False, 'message_id': 361, 'text': '/m Teruel', 'date': 1669851353, 'photo': [], 'new_chat_photo': [], 'from': {'first_name': 'Deivid', 'language_code': 'es', 'id': 312498373, 'username': 'zdl95', 'is_bot': False}}}
+2022-12-01 00:35:54,774; Entering: get_updates
+2022-12-01 00:36:04,773; User (312498373) says: "/m Teruel"
+2022-12-01 00:36:04,822; No new updates found.
+2022-12-01 00:36:04,822; []
+2022-12-01 00:36:04,822; Exiting: get_updates
+2022-12-01 00:36:05,823; Entering: get_updates
+2022-12-01 00:36:15,872; No new updates found.
+2022-12-01 00:36:15,872; []
+2022-12-01 00:36:15,872; Exiting: get_updates
+2022-12-01 00:36:16,872; Entering: get_updates
+2022-12-01 00:36:26,929; No new updates found.
+2022-12-01 00:36:26,935; []
+2022-12-01 00:36:26,935; Exiting: get_updates
+2022-12-01 00:36:27,940; Entering: get_updates
+2022-12-01 00:36:38,003; No new updates found.
+2022-12-01 00:36:38,014; []
+2022-12-01 00:36:38,024; Exiting: get_updates
+2022-12-01 00:36:39,040; Entering: get_updates
+2022-12-01 00:36:45,313; Starting new HTTPS connection (1): opendata.aemet.es:443
+2022-12-01 00:36:45,465; https://opendata.aemet.es:443 "GET /opendata/api/prediccion/especifica/municipio/horaria/44216?api_key=eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2MjM1MDNAdW5pemFyLmVzIiwianRpIjoiZjIzZmY2YTAtM2JhNy00NmE2LWE3YmItMmVmNmVjYTVlODM3IiwiaXNzIjoiQUVNRVQiLCJpYXQiOjE2NjYwNDI0NzYsInVzZXJJZCI6ImYyM2ZmNmEwLTNiYTctNDZhNi1hN2JiLTJlZjZlY2E1ZTgzNyIsInJvbGUiOiIifQ.B87g_Q2kP-ZkFXTl2h6tlz-KngEcmO28ydfnc9TA8gY HTTP/1.1" 200 175
+2022-12-01 00:36:45,488; Starting new HTTPS connection (1): opendata.aemet.es:443
+2022-12-01 00:36:45,618; https://opendata.aemet.es:443 "GET /opendata/sh/c100561d HTTP/1.1" 200 29352
+2022-12-01 00:36:45,645; <Response [200]>
+NoneType: None
+2022-12-01 00:36:45,661; Starting new HTTPS connection (1): opendata.aemet.es:443
+2022-12-01 00:36:45,971; https://opendata.aemet.es:443 "GET /opendata/api/prediccion/ccaa/manana/arn?api_key=eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2MjM1MDNAdW5pemFyLmVzIiwianRpIjoiZjIzZmY2YTAtM2JhNy00NmE2LWE3YmItMmVmNmVjYTVlODM3IiwiaXNzIjoiQUVNRVQiLCJpYXQiOjE2NjYwNDI0NzYsInVzZXJJZCI6ImYyM2ZmNmEwLTNiYTctNDZhNi1hN2JiLTJlZjZlY2E1ZTgzNyIsInJvbGUiOiIifQ.B87g_Q2kP-ZkFXTl2h6tlz-KngEcmO28ydfnc9TA8gY HTTP/1.1" 200 175
+2022-12-01 00:36:45,986; Starting new HTTPS connection (1): opendata.aemet.es:443
+2022-12-01 00:36:46,312; https://opendata.aemet.es:443 "GET /opendata/sh/24dcf76c HTTP/1.1" 200 1020
+2022-12-01 00:36:46,315; <Response [200]>
+NoneType: None
+2022-12-01 00:36:46,331; Starting new HTTPS connection (1): opendata.aemet.es:443
+2022-12-01 00:36:46,473; https://opendata.aemet.es:443 "GET /opendata/api/prediccion/provincia/hoy/44/elaboracion/2022-12-01?api_key=eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2MjM1MDNAdW5pemFyLmVzIiwianRpIjoiZjIzZmY2YTAtM2JhNy00NmE2LWE3YmItMmVmNmVjYTVlODM3IiwiaXNzIjoiQUVNRVQiLCJpYXQiOjE2NjYwNDI0NzYsInVzZXJJZCI6ImYyM2ZmNmEwLTNiYTctNDZhNi1hN2JiLTJlZjZlY2E1ZTgzNyIsInJvbGUiOiIifQ.B87g_Q2kP-ZkFXTl2h6tlz-KngEcmO28ydfnc9TA8gY HTTP/1.1" 200 84
+2022-12-01 00:36:46,491; Starting new HTTPS connection (1): opendata.aemet.es:443
+2022-12-01 00:36:46,811; https://opendata.aemet.es:443 "GET /opendata/api/prediccion/provincia/hoy/44?api_key=eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2MjM1MDNAdW5pemFyLmVzIiwianRpIjoiZjIzZmY2YTAtM2JhNy00NmE2LWE3YmItMmVmNmVjYTVlODM3IiwiaXNzIjoiQUVNRVQiLCJpYXQiOjE2NjYwNDI0NzYsInVzZXJJZCI6ImYyM2ZmNmEwLTNiYTctNDZhNi1hN2JiLTJlZjZlY2E1ZTgzNyIsInJvbGUiOiIifQ.B87g_Q2kP-ZkFXTl2h6tlz-KngEcmO28ydfnc9TA8gY HTTP/1.1" 200 175
+2022-12-01 00:36:46,828; Starting new HTTPS connection (1): opendata.aemet.es:443
+2022-12-01 00:36:47,138; https://opendata.aemet.es:443 "GET /opendata/sh/43629f9a HTTP/1.1" 200 736
+2022-12-01 00:36:47,139; <Response [200]>
+Traceback (most recent call last):
+  File "/home/dlahuerta/Projects/SpanishWeatherBot/AemetBot/telegram_bot/../../AemetBot/aemet/apifunctions.py", line 38, in get_daily_provincial_prediction
+    response = get_json_information(url).text
+               ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/dlahuerta/Projects/SpanishWeatherBot/AemetBot/telegram_bot/../../AemetBot/aemet/apifunctions.py", line 61, in get_json_information
+    result = requests.get(response.json()["datos"])
+                          ~~~~~~~~~~~~~~~^^^^^^^^^
+KeyError: 'datos'
+2022-12-01 00:36:49,129; No new updates found.
+2022-12-01 00:36:49,129; []
+2022-12-01 00:36:49,129; Exiting: get_updates
+2022-12-01 00:36:50,129; Entering: get_updates
+2022-12-01 00:37:00,179; No new updates found.
+2022-12-01 00:37:00,180; []
+2022-12-01 00:37:00,180; Exiting: get_updates
+2022-12-01 00:37:01,180; Entering: get_updates
+2022-12-01 00:37:11,232; No new updates found.
+2022-12-01 00:37:11,233; []
+2022-12-01 00:37:11,234; Exiting: get_updates
+2022-12-01 00:37:12,235; Entering: get_updates
+2022-12-01 00:37:15,239; Entering: send_message
+2022-12-01 00:37:15,499; {'caption_entities': [], 'chat': {'username': 'zdl95', 'type': 'private', 'first_name': 'Deivid', 'id': 312498373}, 'group_chat_created': False, 'channel_chat_created': False, 'new_chat_members': [], 'entities': [], 'supergroup_chat_created': False, 'delete_chat_photo': False, 'message_id': 362, 'text': 'ULTIMA ACTUALIZACION: 30-Nov-2022; 22:44:17\nAMANECE:  08:08\nANOCHECE: 17:38\n\nARAGON\nFENÓMENOS SIGNIFICATIVOS\nTemperaturas mínimas significativamente bajas en el Pirineo, con\nheladas fuertes en cotas altas.\n\nPREDICCIÓN\nEn el cuadrante sureste, cielo nuboso con probables\nprecipitaciones débiles y dispersas en el este de Teruel y de\nZaragoza, preferentemente en la segunda mitad del día; cota de\nnieve bajando de 1400-1600 m a 1200-1400 m. En el resto,\nintervalos de nubes bajas matinales tendiendo a poco nuboso o\ndespejado. Brumas o bancos de nieblas matinales en valles de la\nIbérica. Temperaturas en descenso, salvo las mínimas en Teruel y\nlas máximas en Huesca donde no se esperan cambios. Heladas en el\nPirineo, localmente fuertes en cotas altas; débiles en otras\nzonas del tercio norte y en la Ibérica. Viento variable flojo,\ncon predominio del noroeste en el valle del Ebro.\n\n\nPROVINCIA DE TERUEL\nIntervalos nubosos, disminuyendo de norte a sur a poco nuboso.\nBrumas y bancos de niebla matinales. Temperaturas mínimas en\ndescenso y máximas en ligero ascenso en la Ibérica y en descenso\no sin cambios en el resto. Heladas débiles en la Ibérica. Viento\ndel oeste y noroeste flojo, tendiendo a variable durante la\nmañana.\n\n\nTERUEL\nESTADO DEL CIELO\n00h: Cubierto\n01h: Cubierto\n02h: Cubierto\n03h: Cubierto\n04h: Cubierto\n05h: Muy nuboso\n06h: Poco nuboso\n07h: Poco nuboso\n08h: Despejado\n09h: Despejado\n10h: Cubierto\n11h: Poco nuboso\n12h: Muy nuboso\n13h: Cubierto\n14h: Cubierto\n15h: Cubierto\n16h: Cubierto\n17h: Cubierto\n18h: Cubierto\n\nPROBABILIDAD DE LLUVIA\nEntre las: 01h-07h: 0%\nEntre las: 07h-13h: 0%\nEntre las: 13h-19h: 5%\n\nLLUVIA\n00h: Ip (mm)\n01h: 0 (mm)\n02h: 0 (mm)\n03h: 0 (mm)\n04h: 0 (mm)\n05h: 0 (mm)\n06h: 0 (mm)\n07h: 0 (mm)\n08h: 0 (mm)\n09h: 0 (mm)\n10h: 0 (mm)\n11h: 0 (mm)\n12h: 0 (mm)\n13h: 0 (mm)\n14h: 0 (mm)\n15h: 0 (mm)\n16h: 0 (mm)\n17h: 0 (mm)\n18h: 0 (mm)\n\nPROBABILIDAD DE NIEVE\nEntre las: 01h-07h: 0%\nEntre las: 07h-13h: 0%\nEntre las: 13h-19h: 0%\n\nNIEVE ACUMULADA\n00h: 0 (mm)\n01h: 0 (mm)\n02h: 0 (mm)\n03h: 0 (mm)\n04h: 0 (mm)\n05h: 0 (mm)\n06h: 0 (mm)\n07h: 0 (mm)\n08h: 0 (mm)\n09h: 0 (mm)\n10h: 0 (mm)\n11h: 0 (mm)\n12h: 0 (mm)\n13h: 0 (mm)\n14h: 0 (mm)\n15h: 0 (mm)\n16h: 0 (mm)\n17h: 0 (mm)\n18h: 0 (mm)\n\nTEMPERATURA\n00h: Temperatura: 3ºC; Sensacion termica: 3ºC\n01h: Temperatura: 2ºC; Sensacion termica: 2ºC\n02h: Temperatura: 2ºC; Sensacion termica: 0ºC\n03h: Temperatura: 2ºC; Sensacion termica: -1ºC\n04h: Temperatura: 2ºC; Sensacion termica: -1ºC\n05h: Temperatura: 1ºC; Sensacion termica: -2ºC\n06h: Temperatura: 1ºC; Sensacion termica: -2ºC\n07h: Temperatura: 1ºC; Sensacion termica: -2ºC\n08h: Temperatura: 0ºC; Sensacion termica: -3ºC\n09h: Temperatura: 1ºC; Sensacion termica: 1ºC\n10h: Temperatura: 2ºC; Sensacion termica: 2ºC\n11h: Temperatura: 4ºC; Sensacion termica: 4ºC\n12h: Temperatura: 6ºC; Sensacion termica: 6ºC\n13h: Temperatura: 8ºC; Sensacion termica: 8ºC\n14h: Temperatura: 9ºC; Sensacion termica: 9ºC\n15h: Temperatura: 9ºC; Sensacion termica: 9ºC\n16h: Temperatura: 10ºC; Sensacion termica: 10ºC\n17h: Temperatura: 8ºC; Sensacion termica: 8ºC\n18h: Temperatura: 7ºC; Sensacion termica: 5ºC', 'date': 1669851435, 'photo': [], 'new_chat_photo': [], 'from': {'first_name': 'SpainWeatherBot', 'id': 5667292163, 'username': 'SpainWeatherBot', 'is_bot': True}}
+2022-12-01 00:37:15,500; Exiting: send_message
+2022-12-01 00:37:22,283; No new updates found.
+2022-12-01 00:37:22,284; []
+2022-12-01 00:37:22,284; Exiting: get_updates
+2022-12-01 00:37:23,285; Entering: get_updates
+2022-12-01 00:37:28,445; Getting updates: [619989849]
+2022-12-01 00:37:28,447; [<telegram.update.Update object at 0x7f797a9b4940>]
+2022-12-01 00:37:28,447; Exiting: get_updates
+2022-12-01 00:37:28,447; Processing Update: {'update_id': 619989849, 'message': {'caption_entities': [], 'chat': {'username': 'zdl95', 'type': 'private', 'first_name': 'Deivid', 'id': 312498373}, 'group_chat_created': False, 'channel_chat_created': False, 'new_chat_members': [], 'entities': [{'offset': 0, 'length': 2, 'type': 'bot_command'}], 'supergroup_chat_created': False, 'delete_chat_photo': False, 'message_id': 363, 'text': '/m Teruel; 21', 'date': 1669851448, 'photo': [], 'new_chat_photo': [], 'from': {'first_name': 'Deivid', 'language_code': 'es', 'id': 312498373, 'username': 'zdl95', 'is_bot': False}}}
+2022-12-01 00:37:29,447; Entering: get_updates
+2022-12-01 00:37:36,191; User (312498373) says: "/m Teruel; 21"
+2022-12-01 00:37:39,497; No new updates found.
+2022-12-01 00:37:39,498; []
+2022-12-01 00:37:39,498; Exiting: get_updates
+2022-12-01 00:37:40,499; Entering: get_updates
+2022-12-01 00:37:50,557; No new updates found.
+2022-12-01 00:37:50,567; []
+2022-12-01 00:37:50,577; Exiting: get_updates
+2022-12-01 00:37:51,588; Entering: get_updates
+2022-12-01 00:38:01,687; No new updates found.
+2022-12-01 00:38:01,702; []
+2022-12-01 00:38:01,713; Exiting: get_updates
+2022-12-01 00:38:02,728; Entering: get_updates
+2022-12-01 00:38:12,799; No new updates found.
+2022-12-01 00:38:12,804; []
+2022-12-01 00:38:12,805; Exiting: get_updates
+2022-12-01 00:38:13,810; Entering: get_updates
+2022-12-01 00:38:23,888; No new updates found.
+2022-12-01 00:38:23,888; []
+2022-12-01 00:38:23,888; Exiting: get_updates
+2022-12-01 00:38:24,889; Entering: get_updates
+2022-12-01 00:38:34,936; No new updates found.
+2022-12-01 00:38:34,936; []
+2022-12-01 00:38:34,936; Exiting: get_updates
+2022-12-01 00:38:35,937; Entering: get_updates
+2022-12-01 00:38:37,095; Starting new HTTPS connection (1): opendata.aemet.es:443
+2022-12-01 00:38:37,217; https://opendata.aemet.es:443 "GET /opendata/api/prediccion/especifica/municipio/horaria/44216?api_key=eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2MjM1MDNAdW5pemFyLmVzIiwianRpIjoiZjIzZmY2YTAtM2JhNy00NmE2LWE3YmItMmVmNmVjYTVlODM3IiwiaXNzIjoiQUVNRVQiLCJpYXQiOjE2NjYwNDI0NzYsInVzZXJJZCI6ImYyM2ZmNmEwLTNiYTctNDZhNi1hN2JiLTJlZjZlY2E1ZTgzNyIsInJvbGUiOiIifQ.B87g_Q2kP-ZkFXTl2h6tlz-KngEcmO28ydfnc9TA8gY HTTP/1.1" 200 175
+2022-12-01 00:38:37,233; Starting new HTTPS connection (1): opendata.aemet.es:443
+2022-12-01 00:38:37,419; https://opendata.aemet.es:443 "GET /opendata/sh/c100561d HTTP/1.1" 200 29352
+2022-12-01 00:38:37,436; <Response [200]>
+NoneType: None
+2022-12-01 00:38:45,984; No new updates found.
+2022-12-01 00:38:45,985; []
+2022-12-01 00:38:45,985; Exiting: get_updates
+2022-12-01 00:38:46,985; Entering: get_updates
+2022-12-01 00:38:57,034; No new updates found.
+2022-12-01 00:38:57,035; []
+2022-12-01 00:38:57,035; Exiting: get_updates
+2022-12-01 00:38:58,035; Entering: get_updates
+2022-12-01 00:39:08,084; No new updates found.
+2022-12-01 00:39:08,084; []
+2022-12-01 00:39:08,084; Exiting: get_updates
+2022-12-01 00:39:09,085; Entering: get_updates
+2022-12-01 00:39:19,135; No new updates found.
+2022-12-01 00:39:19,136; []
+2022-12-01 00:39:19,136; Exiting: get_updates
+2022-12-01 00:39:20,137; Entering: get_updates
+2022-12-01 00:39:23,121; Update {'update_id': 619989849, 'message': {'caption_entities': [], 'chat': {'username': 'zdl95', 'type': 'private', 'first_name': 'Deivid', 'id': 312498373}, 'group_chat_created': False, 'channel_chat_created': False, 'new_chat_members': [], 'entities': [{'offset': 0, 'length': 2, 'type': 'bot_command'}], 'supergroup_chat_created': False, 'delete_chat_photo': False, 'message_id': 363, 'text': '/m Teruel; 21', 'date': 1669851448, 'photo': [], 'new_chat_photo': [], 'from': {'first_name': 'Deivid', 'language_code': 'es', 'id': 312498373, 'username': 'zdl95', 'is_bot': False}}} caused error '<' not supported between instances of 'str' and 'int'
+2022-12-01 00:39:30,188; No new updates found.
+2022-12-01 00:39:30,188; []
+2022-12-01 00:39:30,188; Exiting: get_updates
+2022-12-01 00:39:31,189; Entering: get_updates
+2022-12-01 00:39:41,239; No new updates found.
+2022-12-01 00:39:41,239; []
+2022-12-01 00:39:41,240; Exiting: get_updates
+2022-12-01 00:39:42,240; Entering: get_updates
+2022-12-01 00:39:43,015; Getting updates: [619989850]
+2022-12-01 00:39:43,016; [<telegram.update.Update object at 0x7f797a13b380>]
+2022-12-01 00:39:43,017; Exiting: get_updates
+2022-12-01 00:39:43,017; Processing Update: {'update_id': 619989850, 'message': {'caption_entities': [], 'chat': {'username': 'zdl95', 'type': 'private', 'first_name': 'Deivid', 'id': 312498373}, 'group_chat_created': False, 'channel_chat_created': False, 'new_chat_members': [], 'entities': [{'offset': 0, 'length': 2, 'type': 'bot_command'}], 'supergroup_chat_created': False, 'delete_chat_photo': False, 'message_id': 364, 'text': '/m Teruel; 21', 'date': 1669851582, 'photo': [], 'new_chat_photo': [], 'from': {'first_name': 'Deivid', 'language_code': 'es', 'id': 312498373, 'username': 'zdl95', 'is_bot': False}}}
+2022-12-01 00:39:44,017; Entering: get_updates
+2022-12-01 00:39:46,596; User (312498373) says: "/m Teruel; 21"
+2022-12-01 00:39:54,068; No new updates found.
+2022-12-01 00:39:54,068; []
+2022-12-01 00:39:54,068; Exiting: get_updates
+2022-12-01 00:39:55,074; Entering: get_updates
+2022-12-01 00:40:05,150; No new updates found.
+2022-12-01 00:40:05,150; []
+2022-12-01 00:40:05,161; Exiting: get_updates
+2022-12-01 00:40:06,166; Entering: get_updates
+2022-12-01 00:40:16,247; No new updates found.
+2022-12-01 00:40:16,257; []
+2022-12-01 00:40:16,268; Exiting: get_updates
+2022-12-01 00:40:17,278; Entering: get_updates
+2022-12-01 00:40:27,355; No new updates found.
+2022-12-01 00:40:27,361; []
+2022-12-01 00:40:27,361; Exiting: get_updates
+2022-12-01 00:40:28,367; Entering: get_updates
+2022-12-01 00:40:38,459; No new updates found.
+2022-12-01 00:40:38,461; []
+2022-12-01 00:40:38,462; Exiting: get_updates
+2022-12-01 00:40:39,462; Entering: get_updates
+2022-12-01 00:40:45,007; Starting new HTTPS connection (1): opendata.aemet.es:443
+2022-12-01 00:40:45,114; https://opendata.aemet.es:443 "GET /opendata/api/prediccion/especifica/municipio/horaria/44216?api_key=eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2MjM1MDNAdW5pemFyLmVzIiwianRpIjoiZjIzZmY2YTAtM2JhNy00NmE2LWE3YmItMmVmNmVjYTVlODM3IiwiaXNzIjoiQUVNRVQiLCJpYXQiOjE2NjYwNDI0NzYsInVzZXJJZCI6ImYyM2ZmNmEwLTNiYTctNDZhNi1hN2JiLTJlZjZlY2E1ZTgzNyIsInJvbGUiOiIifQ.B87g_Q2kP-ZkFXTl2h6tlz-KngEcmO28ydfnc9TA8gY HTTP/1.1" 200 175
+2022-12-01 00:40:45,130; Starting new HTTPS connection (1): opendata.aemet.es:443
+2022-12-01 00:40:45,269; https://opendata.aemet.es:443 "GET /opendata/sh/c100561d HTTP/1.1" 200 29352
+2022-12-01 00:40:45,291; <Response [200]>
+NoneType: None
+2022-12-01 00:40:49,514; No new updates found.
+2022-12-01 00:40:49,515; []
+2022-12-01 00:40:49,515; Exiting: get_updates
+2022-12-01 00:40:50,515; Entering: get_updates
+2022-12-01 00:41:00,568; No new updates found.
+2022-12-01 00:41:00,568; []
+2022-12-01 00:41:00,569; Exiting: get_updates
+2022-12-01 00:41:01,569; Entering: get_updates
+2022-12-01 00:41:11,629; No new updates found.
+2022-12-01 00:41:11,629; []
+2022-12-01 00:41:11,630; Exiting: get_updates
+2022-12-01 00:41:12,630; Entering: get_updates
+2022-12-01 00:41:22,681; No new updates found.
+2022-12-01 00:41:22,681; []
+2022-12-01 00:41:22,681; Exiting: get_updates
+2022-12-01 00:41:23,682; Entering: get_updates
+2022-12-01 00:41:33,729; No new updates found.
+2022-12-01 00:41:33,730; []
+2022-12-01 00:41:33,730; Exiting: get_updates
+2022-12-01 00:41:34,730; Entering: get_updates
+2022-12-01 00:41:43,621; Update {'update_id': 619989850, 'message': {'caption_entities': [], 'chat': {'username': 'zdl95', 'type': 'private', 'first_name': 'Deivid', 'id': 312498373}, 'group_chat_created': False, 'channel_chat_created': False, 'new_chat_members': [], 'entities': [{'offset': 0, 'length': 2, 'type': 'bot_command'}], 'supergroup_chat_created': False, 'delete_chat_photo': False, 'message_id': 364, 'text': '/m Teruel; 21', 'date': 1669851582, 'photo': [], 'new_chat_photo': [], 'from': {'first_name': 'Deivid', 'language_code': 'es', 'id': 312498373, 'username': 'zdl95', 'is_bot': False}}} caused error '<' not supported between instances of 'str' and 'int'
+2022-12-01 00:41:44,777; No new updates found.
+2022-12-01 00:41:44,777; []
+2022-12-01 00:41:44,777; Exiting: get_updates
+2022-12-01 00:41:45,777; Entering: get_updates
+2022-12-01 00:41:55,826; No new updates found.
+2022-12-01 00:41:55,826; []
+2022-12-01 00:41:55,826; Exiting: get_updates
+2022-12-01 00:41:56,827; Entering: get_updates
+2022-12-01 00:42:06,876; No new updates found.
+2022-12-01 00:42:06,876; []
+2022-12-01 00:42:06,876; Exiting: get_updates
+2022-12-01 00:42:07,877; Entering: get_updates
+2022-12-01 00:42:10,459; Getting updates: [619989851]
+2022-12-01 00:42:10,460; [<telegram.update.Update object at 0x7f79a45dc2c0>]
+2022-12-01 00:42:10,461; Exiting: get_updates
+2022-12-01 00:42:10,461; Processing Update: {'update_id': 619989851, 'message': {'caption_entities': [], 'chat': {'username': 'mmg96', 'type': 'private', 'last_name': 'Martinez', 'first_name': 'Marcos', 'id': 287793762}, 'group_chat_created': False, 'channel_chat_created': False, 'new_chat_members': [], 'entities': [{'offset': 0, 'length': 2, 'type': 'bot_command'}], 'supergroup_chat_created': False, 'delete_chat_photo': False, 'message_id': 365, 'text': '/m Teruel; 21', 'date': 1669851730, 'photo': [], 'new_chat_photo': [], 'from': {'first_name': 'Marcos', 'language_code': 'en', 'id': 287793762, 'last_name': 'Martinez', 'username': 'mmg96', 'is_bot': False}}}
+2022-12-01 00:42:11,461; Entering: get_updates
+2022-12-01 00:42:13,815; User (287793762) says: "/m Teruel; 21"
+2022-12-01 00:42:21,524; No new updates found.
+2022-12-01 00:42:21,535; []
+2022-12-01 00:42:21,545; Exiting: get_updates
+2022-12-01 00:42:22,550; Entering: get_updates
+2022-12-01 00:42:32,649; No new updates found.
+2022-12-01 00:42:32,655; []
+2022-12-01 00:42:32,665; Exiting: get_updates
+2022-12-01 00:42:33,006; Starting new HTTPS connection (1): opendata.aemet.es:443
+2022-12-01 00:42:33,131; https://opendata.aemet.es:443 "GET /opendata/api/prediccion/especifica/municipio/horaria/44216?api_key=eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2MjM1MDNAdW5pemFyLmVzIiwianRpIjoiZjIzZmY2YTAtM2JhNy00NmE2LWE3YmItMmVmNmVjYTVlODM3IiwiaXNzIjoiQUVNRVQiLCJpYXQiOjE2NjYwNDI0NzYsInVzZXJJZCI6ImYyM2ZmNmEwLTNiYTctNDZhNi1hN2JiLTJlZjZlY2E1ZTgzNyIsInJvbGUiOiIifQ.B87g_Q2kP-ZkFXTl2h6tlz-KngEcmO28ydfnc9TA8gY HTTP/1.1" 200 175
+2022-12-01 00:42:33,142; Starting new HTTPS connection (1): opendata.aemet.es:443
+2022-12-01 00:42:33,296; https://opendata.aemet.es:443 "GET /opendata/sh/c100561d HTTP/1.1" 200 29352
+2022-12-01 00:42:33,316; <Response [200]>
+NoneType: None
+2022-12-01 00:42:33,676; Entering: get_updates
+2022-12-01 00:42:43,724; No new updates found.
+2022-12-01 00:42:43,724; []
+2022-12-01 00:42:43,724; Exiting: get_updates
+2022-12-01 00:42:44,724; Entering: get_updates
+2022-12-01 00:42:54,774; No new updates found.
+2022-12-01 00:42:54,774; []
+2022-12-01 00:42:54,774; Exiting: get_updates
+2022-12-01 00:42:55,775; Entering: get_updates
+2022-12-01 00:43:05,827; No new updates found.
+2022-12-01 00:43:05,828; []
+2022-12-01 00:43:05,828; Exiting: get_updates
+2022-12-01 00:43:06,829; Entering: get_updates
+2022-12-01 00:43:16,879; No new updates found.
+2022-12-01 00:43:16,879; []
+2022-12-01 00:43:16,879; Exiting: get_updates
+2022-12-01 00:43:17,880; Entering: get_updates
+2022-12-01 00:43:27,932; No new updates found.
+2022-12-01 00:43:27,933; []
+2022-12-01 00:43:27,933; Exiting: get_updates
+2022-12-01 00:43:28,934; Entering: get_updates
+2022-12-01 00:43:38,983; No new updates found.
+2022-12-01 00:43:38,983; []
+2022-12-01 00:43:38,984; Exiting: get_updates
+2022-12-01 00:43:39,984; Entering: get_updates
+2022-12-01 00:43:50,034; No new updates found.
+2022-12-01 00:43:50,034; []
+2022-12-01 00:43:50,034; Exiting: get_updates
+2022-12-01 00:43:51,034; Entering: get_updates
+2022-12-01 00:44:01,085; No new updates found.
+2022-12-01 00:44:01,086; []
+2022-12-01 00:44:01,086; Exiting: get_updates
+2022-12-01 00:44:02,086; Entering: get_updates
+2022-12-01 00:44:12,137; No new updates found.
+2022-12-01 00:44:12,137; []
+2022-12-01 00:44:12,138; Exiting: get_updates
+2022-12-01 00:44:13,138; Entering: get_updates
+2022-12-01 00:44:23,188; No new updates found.
+2022-12-01 00:44:23,189; []
+2022-12-01 00:44:23,189; Exiting: get_updates
+2022-12-01 00:44:24,190; Entering: get_updates
+2022-12-01 00:44:34,241; No new updates found.
+2022-12-01 00:44:34,241; []
+2022-12-01 00:44:34,241; Exiting: get_updates
+2022-12-01 00:44:35,241; Entering: get_updates
+2022-12-01 00:44:45,293; No new updates found.
+2022-12-01 00:44:45,293; []
+2022-12-01 00:44:45,293; Exiting: get_updates
+2022-12-01 00:44:46,293; Entering: get_updates
+2022-12-01 00:44:56,347; No new updates found.
+2022-12-01 00:44:56,347; []
+2022-12-01 00:44:56,347; Exiting: get_updates
+2022-12-01 00:44:57,348; Entering: get_updates
+2022-12-01 00:45:07,400; No new updates found.
+2022-12-01 00:45:07,400; []
+2022-12-01 00:45:07,401; Exiting: get_updates
+2022-12-01 00:45:08,401; Entering: get_updates
+2022-12-01 00:45:18,453; No new updates found.
+2022-12-01 00:45:18,453; []
+2022-12-01 00:45:18,453; Exiting: get_updates
+2022-12-01 00:45:19,454; Entering: get_updates
+2022-12-01 00:45:22,638; Received signal 2 (SIGINT), stopping...
+2022-12-01 00:45:22,639; Scheduler has been shut down
+2022-12-01 00:45:22,639; Looking for jobs to run
+2022-12-01 00:45:22,640; No jobs; waiting until a job is added
+2022-12-01 00:45:22,641; Stopping Updater and Dispatcher...
+2022-12-01 00:45:22,642; Requesting Dispatcher to stop...
+2022-12-01 00:45:29,508; No new updates found.
+2022-12-01 00:45:29,508; []
+2022-12-01 00:45:29,509; Exiting: get_updates
+2022-12-01 00:45:30,509; Bot:5667292163:updater - ended
+2022-12-01 00:47:20,017; Setting singleton dispatcher as <telegram.ext.dispatcher.Dispatcher object at 0x7fa56a052dd0>
+2022-12-01 00:47:20,028; Scheduler started
+2022-12-01 00:47:20,031; Entering: get_me
+2022-12-01 00:47:20,033; Looking for jobs to run
+2022-12-01 00:47:20,034; No jobs; waiting until a job is added
+2022-12-01 00:47:20,241; {'supports_inline_queries': False, 'id': 5667292163, 'username': 'SpainWeatherBot', 'can_join_groups': True, 'is_bot': True, 'first_name': 'SpainWeatherBot', 'can_read_all_group_messages': False}
+2022-12-01 00:47:20,242; Exiting: get_me
+2022-12-01 00:47:20,243; Bot:5667292163:dispatcher - started
+2022-12-01 00:47:20,247; Bot:5667292163:updater - started
+2022-12-01 00:47:20,248; Updater thread started (polling)
+2022-12-01 00:47:20,249; Start network loop retry bootstrap del webhook
+2022-12-01 00:47:20,250; Deleting webhook
+2022-12-01 00:47:20,250; Entering: delete_webhook
+2022-12-01 00:47:20,254; Waiting for Dispatcher and polling to start
+2022-12-01 00:47:20,260; Dispatcher started
+2022-12-01 00:47:20,300; True
+2022-12-01 00:47:20,300; Exiting: delete_webhook
+2022-12-01 00:47:20,301; Bootstrap done
+2022-12-01 00:47:20,301; Start network loop retry getting Updates
+2022-12-01 00:47:20,302; Entering: get_updates
+2022-12-01 00:47:25,978; Getting updates: [619989852]
+2022-12-01 00:47:25,980; [<telegram.update.Update object at 0x7fa53fba6410>]
+2022-12-01 00:47:25,980; Exiting: get_updates
+2022-12-01 00:47:25,981; Processing Update: {'update_id': 619989852, 'message': {'new_chat_photo': [], 'group_chat_created': False, 'delete_chat_photo': False, 'supergroup_chat_created': False, 'message_id': 366, 'entities': [{'length': 2, 'type': 'bot_command', 'offset': 0}], 'date': 1669852045, 'photo': [], 'channel_chat_created': False, 'caption_entities': [], 'chat': {'username': 'zdl95', 'type': 'private', 'id': 312498373, 'first_name': 'Deivid'}, 'text': '/m Teruel; 21', 'new_chat_members': [], 'from': {'id': 312498373, 'username': 'zdl95', 'language_code': 'es', 'is_bot': False, 'first_name': 'Deivid'}}}
+2022-12-01 00:47:26,981; Entering: get_updates
+2022-12-01 00:47:28,947; User (312498373) says: "/m Teruel; 21"
+2022-12-01 00:47:37,037; No new updates found.
+2022-12-01 00:47:37,042; []
+2022-12-01 00:47:37,047; Exiting: get_updates
+2022-12-01 00:47:38,063; Entering: get_updates
+2022-12-01 00:47:48,152; No new updates found.
+2022-12-01 00:47:48,163; []
+2022-12-01 00:47:48,168; Exiting: get_updates
+2022-12-01 00:47:48,636; Starting new HTTPS connection (1): opendata.aemet.es:443
+2022-12-01 00:47:48,740; https://opendata.aemet.es:443 "GET /opendata/api/prediccion/especifica/municipio/horaria/44216?api_key=eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2MjM1MDNAdW5pemFyLmVzIiwianRpIjoiZjIzZmY2YTAtM2JhNy00NmE2LWE3YmItMmVmNmVjYTVlODM3IiwiaXNzIjoiQUVNRVQiLCJpYXQiOjE2NjYwNDI0NzYsInVzZXJJZCI6ImYyM2ZmNmEwLTNiYTctNDZhNi1hN2JiLTJlZjZlY2E1ZTgzNyIsInJvbGUiOiIifQ.B87g_Q2kP-ZkFXTl2h6tlz-KngEcmO28ydfnc9TA8gY HTTP/1.1" 200 175
+2022-12-01 00:47:48,754; Starting new HTTPS connection (1): opendata.aemet.es:443
+2022-12-01 00:47:48,913; https://opendata.aemet.es:443 "GET /opendata/sh/c100561d HTTP/1.1" 200 29352
+2022-12-01 00:47:48,938; <Response [200]>
+NoneType: None
+2022-12-01 00:47:49,174; Entering: get_updates
+2022-12-01 00:47:59,222; No new updates found.
+2022-12-01 00:47:59,223; []
+2022-12-01 00:47:59,223; Exiting: get_updates
+2022-12-01 00:48:00,224; Entering: get_updates
+2022-12-01 00:48:10,278; No new updates found.
+2022-12-01 00:48:10,279; []
+2022-12-01 00:48:10,280; Exiting: get_updates
+2022-12-01 00:48:11,281; Entering: get_updates
+2022-12-01 00:48:21,330; No new updates found.
+2022-12-01 00:48:21,330; []
+2022-12-01 00:48:21,331; Exiting: get_updates
+2022-12-01 00:48:22,331; Entering: get_updates
+2022-12-01 00:48:32,381; No new updates found.
+2022-12-01 00:48:32,381; []
+2022-12-01 00:48:32,382; Exiting: get_updates
+2022-12-01 00:48:33,382; Entering: get_updates
+2022-12-01 00:48:43,434; No new updates found.
+2022-12-01 00:48:43,435; []
+2022-12-01 00:48:43,436; Exiting: get_updates
+2022-12-01 00:48:44,438; Entering: get_updates
+2022-12-01 00:48:54,490; No new updates found.
+2022-12-01 00:48:54,491; []
+2022-12-01 00:48:54,491; Exiting: get_updates
+2022-12-01 00:48:55,492; Entering: get_updates
+2022-12-01 00:49:05,541; No new updates found.
+2022-12-01 00:49:05,541; []
+2022-12-01 00:49:05,541; Exiting: get_updates
+2022-12-01 00:49:06,542; Entering: get_updates
+2022-12-01 00:49:16,588; No new updates found.
+2022-12-01 00:49:16,588; []
+2022-12-01 00:49:16,589; Exiting: get_updates
+2022-12-01 00:49:17,589; Entering: get_updates
+2022-12-01 00:49:27,639; No new updates found.
+2022-12-01 00:49:27,640; []
+2022-12-01 00:49:27,640; Exiting: get_updates
+2022-12-01 00:49:28,640; Entering: get_updates
+2022-12-01 00:49:38,691; No new updates found.
+2022-12-01 00:49:38,691; []
+2022-12-01 00:49:38,691; Exiting: get_updates
+2022-12-01 00:49:39,692; Entering: get_updates
+2022-12-01 00:49:49,744; No new updates found.
+2022-12-01 00:49:49,745; []
+2022-12-01 00:49:49,745; Exiting: get_updates
+2022-12-01 00:49:50,745; Entering: get_updates
+2022-12-01 00:50:00,794; No new updates found.
+2022-12-01 00:50:00,794; []
+2022-12-01 00:50:00,794; Exiting: get_updates
+2022-12-01 00:50:01,795; Entering: get_updates
+2022-12-01 00:50:11,843; No new updates found.
+2022-12-01 00:50:11,843; []
+2022-12-01 00:50:11,844; Exiting: get_updates
+2022-12-01 00:50:12,845; Entering: get_updates
+2022-12-01 00:50:22,895; No new updates found.
+2022-12-01 00:50:22,895; []
+2022-12-01 00:50:22,896; Exiting: get_updates
+2022-12-01 00:50:23,896; Entering: get_updates
+2022-12-01 00:50:33,949; No new updates found.
+2022-12-01 00:50:33,949; []
+2022-12-01 00:50:33,950; Exiting: get_updates
+2022-12-01 00:50:34,950; Entering: get_updates
+2022-12-01 00:50:44,999; No new updates found.
+2022-12-01 00:50:44,999; []
+2022-12-01 00:50:44,999; Exiting: get_updates
+2022-12-01 00:50:46,000; Entering: get_updates
+2022-12-01 00:50:56,054; No new updates found.
+2022-12-01 00:50:56,054; []
+2022-12-01 00:50:56,055; Exiting: get_updates
+2022-12-01 00:50:57,056; Entering: get_updates
+2022-12-01 00:51:07,111; No new updates found.
+2022-12-01 00:51:07,112; []
+2022-12-01 00:51:07,112; Exiting: get_updates
+2022-12-01 00:51:08,113; Entering: get_updates
+2022-12-01 00:51:18,163; No new updates found.
+2022-12-01 00:51:18,163; []
+2022-12-01 00:51:18,163; Exiting: get_updates
+2022-12-01 00:51:19,164; Entering: get_updates
+2022-12-01 00:51:29,217; No new updates found.
+2022-12-01 00:51:29,218; []
+2022-12-01 00:51:29,219; Exiting: get_updates
+2022-12-01 00:51:30,221; Entering: get_updates
+2022-12-01 00:51:40,272; No new updates found.
+2022-12-01 00:51:40,272; []
+2022-12-01 00:51:40,272; Exiting: get_updates
+2022-12-01 00:51:41,273; Entering: get_updates
+2022-12-01 00:51:51,321; No new updates found.
+2022-12-01 00:51:51,321; []
+2022-12-01 00:51:51,322; Exiting: get_updates
+2022-12-01 00:51:52,322; Entering: get_updates
+2022-12-01 00:52:02,370; No new updates found.
+2022-12-01 00:52:02,371; []
+2022-12-01 00:52:02,371; Exiting: get_updates
+2022-12-01 00:52:03,371; Entering: get_updates
+2022-12-01 00:52:13,422; No new updates found.
+2022-12-01 00:52:13,422; []
+2022-12-01 00:52:13,422; Exiting: get_updates
+2022-12-01 00:52:14,423; Entering: get_updates
+2022-12-01 00:52:24,474; No new updates found.
+2022-12-01 00:52:24,475; []
+2022-12-01 00:52:24,475; Exiting: get_updates
+2022-12-01 00:52:25,475; Entering: get_updates
+2022-12-01 00:52:32,706; Received signal 2 (SIGINT), stopping...
+2022-12-01 00:52:32,706; Scheduler has been shut down
+2022-12-01 00:52:32,707; Looking for jobs to run
+2022-12-01 00:52:32,707; No jobs; waiting until a job is added
+2022-12-01 00:52:32,708; Stopping Updater and Dispatcher...
+2022-12-01 00:52:32,708; Requesting Dispatcher to stop...
+2022-12-01 00:52:45,888; Setting singleton dispatcher as <telegram.ext.dispatcher.Dispatcher object at 0x7f24ab0f6dd0>
+2022-12-01 00:52:45,892; Scheduler started
+2022-12-01 00:52:45,894; Entering: get_me
+2022-12-01 00:52:45,896; Looking for jobs to run
+2022-12-01 00:52:45,896; No jobs; waiting until a job is added
+2022-12-01 00:52:46,086; {'username': 'SpainWeatherBot', 'first_name': 'SpainWeatherBot', 'id': 5667292163, 'can_join_groups': True, 'supports_inline_queries': False, 'can_read_all_group_messages': False, 'is_bot': True}
+2022-12-01 00:52:46,087; Exiting: get_me
+2022-12-01 00:52:46,088; Bot:5667292163:dispatcher - started
+2022-12-01 00:52:46,091; Bot:5667292163:updater - started
+2022-12-01 00:52:46,091; Updater thread started (polling)
+2022-12-01 00:52:46,091; Waiting for Dispatcher and polling to start
+2022-12-01 00:52:46,092; Start network loop retry bootstrap del webhook
+2022-12-01 00:52:46,093; Deleting webhook
+2022-12-01 00:52:46,094; Entering: delete_webhook
+2022-12-01 00:52:46,094; Dispatcher started
+2022-12-01 00:52:46,145; True
+2022-12-01 00:52:46,146; Exiting: delete_webhook
+2022-12-01 00:52:46,146; Bootstrap done
+2022-12-01 00:52:46,146; Start network loop retry getting Updates
+2022-12-01 00:52:46,146; Entering: get_updates
+2022-12-01 00:52:46,200; Getting updates: [619989853]
+2022-12-01 00:52:46,201; [<telegram.update.Update object at 0x7f2480c52410>]
+2022-12-01 00:52:46,201; Exiting: get_updates
+2022-12-01 00:52:46,202; Processing Update: {'update_id': 619989853, 'message': {'group_chat_created': False, 'date': 1669852362, 'supergroup_chat_created': False, 'new_chat_photo': [], 'message_id': 367, 'photo': [], 'new_chat_members': [], 'chat': {'username': 'zdl95', 'id': 312498373, 'first_name': 'Deivid', 'type': 'private'}, 'text': 'Teruel; 21', 'delete_chat_photo': False, 'channel_chat_created': False, 'caption_entities': [], 'entities': [], 'from': {'username': 'zdl95', 'first_name': 'Deivid', 'id': 312498373, 'is_bot': False, 'language_code': 'es'}}}
+2022-12-01 00:52:46,203; User (312498373) says: "Teruel; 21"
+2022-12-01 00:52:47,207; Entering: get_updates
+2022-12-01 00:52:50,899; Received signal 2 (SIGINT), stopping...
+2022-12-01 00:52:50,909; Scheduler has been shut down
+2022-12-01 00:52:50,925; Looking for jobs to run
+2022-12-01 00:52:50,930; No jobs; waiting until a job is added
+2022-12-01 00:52:51,024; Stopping Updater and Dispatcher...
+2022-12-01 00:52:51,029; Requesting Dispatcher to stop...
+2022-12-01 00:53:06,415; Setting singleton dispatcher as <telegram.ext.dispatcher.Dispatcher object at 0x7f1634236dd0>
+2022-12-01 00:53:06,418; Scheduler started
+2022-12-01 00:53:06,419; Entering: get_me
+2022-12-01 00:53:06,421; Looking for jobs to run
+2022-12-01 00:53:06,421; No jobs; waiting until a job is added
+2022-12-01 00:53:06,580; {'can_read_all_group_messages': False, 'is_bot': True, 'username': 'SpainWeatherBot', 'id': 5667292163, 'first_name': 'SpainWeatherBot', 'supports_inline_queries': False, 'can_join_groups': True}
+2022-12-01 00:53:06,581; Exiting: get_me
+2022-12-01 00:53:06,582; Bot:5667292163:dispatcher - started
+2022-12-01 00:53:06,583; Bot:5667292163:updater - started
+2022-12-01 00:53:06,583; Waiting for Dispatcher and polling to start
+2022-12-01 00:53:06,584; Updater thread started (polling)
+2022-12-01 00:53:06,587; Start network loop retry bootstrap del webhook
+2022-12-01 00:53:06,587; Deleting webhook
+2022-12-01 00:53:06,587; Entering: delete_webhook
+2022-12-01 00:53:06,591; Dispatcher started
+2022-12-01 00:53:06,636; True
+2022-12-01 00:53:06,637; Exiting: delete_webhook
+2022-12-01 00:53:06,637; Bootstrap done
+2022-12-01 00:53:06,637; Start network loop retry getting Updates
+2022-12-01 00:53:06,637; Entering: get_updates
+2022-12-01 00:53:16,684; No new updates found.
+2022-12-01 00:53:16,685; []
+2022-12-01 00:53:16,685; Exiting: get_updates
+2022-12-01 00:53:17,686; Entering: get_updates
+2022-12-01 00:53:19,379; Getting updates: [619989854]
+2022-12-01 00:53:19,381; [<telegram.update.Update object at 0x7f1609d8e5b0>]
+2022-12-01 00:53:19,381; Exiting: get_updates
+2022-12-01 00:53:19,382; Processing Update: {'message': {'entities': [{'length': 2, 'type': 'bot_command', 'offset': 0}], 'photo': [], 'delete_chat_photo': False, 'supergroup_chat_created': False, 'new_chat_members': [], 'message_id': 368, 'new_chat_photo': [], 'group_chat_created': False, 'text': '/m Teruel; 22', 'chat': {'first_name': 'Deivid', 'type': 'private', 'username': 'zdl95', 'id': 312498373}, 'channel_chat_created': False, 'caption_entities': [], 'date': 1669852399, 'from': {'language_code': 'es', 'is_bot': False, 'username': 'zdl95', 'id': 312498373, 'first_name': 'Deivid'}}, 'update_id': 619989854}
+2022-12-01 00:53:20,382; Entering: get_updates
+2022-12-01 00:53:21,419; User (312498373) says: "/m Teruel; 22"
+2022-12-01 00:53:30,436; No new updates found.
+2022-12-01 00:53:30,447; []
+2022-12-01 00:53:30,452; Exiting: get_updates
+2022-12-01 00:53:31,458; Entering: get_updates
+2022-12-01 00:53:38,611; Starting new HTTPS connection (1): opendata.aemet.es:443
+2022-12-01 00:53:38,748; https://opendata.aemet.es:443 "GET /opendata/api/prediccion/especifica/municipio/horaria/44216?api_key=eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2MjM1MDNAdW5pemFyLmVzIiwianRpIjoiZjIzZmY2YTAtM2JhNy00NmE2LWE3YmItMmVmNmVjYTVlODM3IiwiaXNzIjoiQUVNRVQiLCJpYXQiOjE2NjYwNDI0NzYsInVzZXJJZCI6ImYyM2ZmNmEwLTNiYTctNDZhNi1hN2JiLTJlZjZlY2E1ZTgzNyIsInJvbGUiOiIifQ.B87g_Q2kP-ZkFXTl2h6tlz-KngEcmO28ydfnc9TA8gY HTTP/1.1" 200 175
+2022-12-01 00:53:38,754; Starting new HTTPS connection (1): opendata.aemet.es:443
+2022-12-01 00:53:38,882; https://opendata.aemet.es:443 "GET /opendata/sh/c100561d HTTP/1.1" 200 29352
+2022-12-01 00:53:38,903; <Response [200]>
+NoneType: None
+2022-12-01 00:53:41,552; No new updates found.
+2022-12-01 00:53:41,553; []
+2022-12-01 00:53:41,553; Exiting: get_updates
+2022-12-01 00:53:42,554; Entering: get_updates
+2022-12-01 00:53:52,605; No new updates found.
+2022-12-01 00:53:52,606; []
+2022-12-01 00:53:52,606; Exiting: get_updates
+2022-12-01 00:53:53,607; Entering: get_updates
+2022-12-01 00:54:03,660; No new updates found.
+2022-12-01 00:54:03,661; []
+2022-12-01 00:54:03,662; Exiting: get_updates
+2022-12-01 00:54:04,673; Entering: get_updates
+2022-12-01 00:54:12,026; Entering: send_message
+2022-12-01 00:54:12,343; {'entities': [], 'photo': [], 'delete_chat_photo': False, 'supergroup_chat_created': False, 'new_chat_members': [], 'message_id': 369, 'new_chat_photo': [], 'group_chat_created': False, 'text': 'LA PREDICCIÓN PARA ESA HORA HA SIDO ELIMINADA.', 'chat': {'first_name': 'Deivid', 'type': 'private', 'username': 'zdl95', 'id': 312498373}, 'channel_chat_created': False, 'caption_entities': [], 'date': 1669852452, 'from': {'is_bot': True, 'username': 'SpainWeatherBot', 'id': 5667292163, 'first_name': 'SpainWeatherBot'}}
+2022-12-01 00:54:12,345; Exiting: send_message
+2022-12-01 00:54:14,748; No new updates found.
+2022-12-01 00:54:14,749; []
+2022-12-01 00:54:14,750; Exiting: get_updates
+2022-12-01 00:54:15,751; Entering: get_updates
+2022-12-01 00:54:25,802; No new updates found.
+2022-12-01 00:54:25,802; []
+2022-12-01 00:54:25,802; Exiting: get_updates
+2022-12-01 00:54:26,803; Entering: get_updates
+2022-12-01 00:54:36,852; No new updates found.
+2022-12-01 00:54:36,852; []
+2022-12-01 00:54:36,852; Exiting: get_updates
+2022-12-01 00:54:37,853; Entering: get_updates
+2022-12-01 00:54:47,904; No new updates found.
+2022-12-01 00:54:47,904; []
+2022-12-01 00:54:47,905; Exiting: get_updates
+2022-12-01 00:54:48,905; Entering: get_updates
+2022-12-01 00:54:49,311; Getting updates: [619989855]
+2022-12-01 00:54:49,313; [<telegram.update.Update object at 0x7f160af8f450>]
+2022-12-01 00:54:49,313; Exiting: get_updates
+2022-12-01 00:54:49,313; Processing Update: {'message': {'entities': [{'length': 2, 'type': 'bot_command', 'offset': 0}], 'photo': [], 'delete_chat_photo': False, 'supergroup_chat_created': False, 'new_chat_members': [], 'message_id': 370, 'new_chat_photo': [], 'group_chat_created': False, 'text': '/m Teruel; 20-22', 'chat': {'first_name': 'Deivid', 'type': 'private', 'username': 'zdl95', 'id': 312498373}, 'channel_chat_created': False, 'caption_entities': [], 'date': 1669852489, 'from': {'language_code': 'es', 'is_bot': False, 'username': 'zdl95', 'id': 312498373, 'first_name': 'Deivid'}}, 'update_id': 619989855}
+2022-12-01 00:54:50,313; Entering: get_updates
+2022-12-01 00:54:52,123; User (312498373) says: "/m Teruel; 20-22"
+2022-12-01 00:55:00,373; No new updates found.
+2022-12-01 00:55:00,383; []
+2022-12-01 00:55:00,394; Exiting: get_updates
+2022-12-01 00:55:01,404; Entering: get_updates
+2022-12-01 00:55:06,283; Starting new HTTPS connection (1): opendata.aemet.es:443
+2022-12-01 00:55:06,445; https://opendata.aemet.es:443 "GET /opendata/api/prediccion/especifica/municipio/horaria/44216?api_key=eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2MjM1MDNAdW5pemFyLmVzIiwianRpIjoiZjIzZmY2YTAtM2JhNy00NmE2LWE3YmItMmVmNmVjYTVlODM3IiwiaXNzIjoiQUVNRVQiLCJpYXQiOjE2NjYwNDI0NzYsInVzZXJJZCI6ImYyM2ZmNmEwLTNiYTctNDZhNi1hN2JiLTJlZjZlY2E1ZTgzNyIsInJvbGUiOiIifQ.B87g_Q2kP-ZkFXTl2h6tlz-KngEcmO28ydfnc9TA8gY HTTP/1.1" 200 175
+2022-12-01 00:55:06,468; Starting new HTTPS connection (1): opendata.aemet.es:443
+2022-12-01 00:55:06,673; https://opendata.aemet.es:443 "GET /opendata/sh/c100561d HTTP/1.1" 200 29352
+2022-12-01 00:55:06,697; <Response [200]>
+NoneType: None
+2022-12-01 00:55:07,488; Entering: send_message
+2022-12-01 00:55:07,574; {'entities': [], 'photo': [], 'delete_chat_photo': False, 'supergroup_chat_created': False, 'new_chat_members': [], 'message_id': 371, 'new_chat_photo': [], 'group_chat_created': False, 'text': 'LA PREDICCIÓN PARA ESA HORA HA SIDO ELIMINADA.', 'chat': {'first_name': 'Deivid', 'type': 'private', 'username': 'zdl95', 'id': 312498373}, 'channel_chat_created': False, 'caption_entities': [], 'date': 1669852507, 'from': {'is_bot': True, 'username': 'SpainWeatherBot', 'id': 5667292163, 'first_name': 'SpainWeatherBot'}}
+2022-12-01 00:55:07,574; Exiting: send_message
+2022-12-01 00:55:11,497; No new updates found.
+2022-12-01 00:55:11,498; []
+2022-12-01 00:55:11,498; Exiting: get_updates
+2022-12-01 00:55:12,499; Entering: get_updates
+2022-12-01 00:55:22,548; No new updates found.
+2022-12-01 00:55:22,549; []
+2022-12-01 00:55:22,549; Exiting: get_updates
+2022-12-01 00:55:23,549; Entering: get_updates
+2022-12-01 00:55:33,598; No new updates found.
+2022-12-01 00:55:33,599; []
+2022-12-01 00:55:33,599; Exiting: get_updates
+2022-12-01 00:55:34,599; Entering: get_updates
+2022-12-01 00:55:44,649; No new updates found.
+2022-12-01 00:55:44,650; []
+2022-12-01 00:55:44,650; Exiting: get_updates
+2022-12-01 00:55:45,651; Entering: get_updates
+2022-12-01 00:55:55,715; No new updates found.
+2022-12-01 00:55:55,715; []
+2022-12-01 00:55:55,715; Exiting: get_updates
+2022-12-01 00:55:56,716; Entering: get_updates
+2022-12-01 00:56:06,766; No new updates found.
+2022-12-01 00:56:06,766; []
+2022-12-01 00:56:06,766; Exiting: get_updates
+2022-12-01 00:56:07,767; Entering: get_updates
