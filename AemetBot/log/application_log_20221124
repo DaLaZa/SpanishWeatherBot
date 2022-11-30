@@ -1,0 +1,8 @@
+2022-11-24 23:33:45,014; Rapidfuzz returns a value smaller than 85
+2022-11-24 23:33:45,015; Error retrieving data of city: Hola
+Traceback (most recent call last):
+  File "/home/dlahuerta/Projects/AemetBot/aemet/final_forecast.py", line 23, in load_api_information
+    municipality_cod, province_cod, name = get_all_xls_codes(municipality)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: not enough values to unpack (expected 3, got 0)
+2022-11-24 23:48:19,440; Starting new HTTPS connection (1): opendata.aemet.es:443

@@ -2,7 +2,11 @@ from datetime import datetime
 from .constants import *
 
 
-# Checks the dates to return the correct one
+# Definition: Checks the JSON file dates to return the correct one.
+# Variables:
+#   result: Aemet API information.
+#   date_time: Current datetime.
+# Created: DAVID LAHUERTA ZAYAS
 def check_result_dates(result, date_time):
     date_today_format = "%Y-%m-%d %H:%M:%S.%f"
     date_today = str(datetime.strptime(str(date_time), date_today_format).strftime("%d-%b-%Y"))
@@ -16,7 +20,11 @@ def check_result_dates(result, date_time):
     return 0
 
 
-# Get the last load values and golden hours
+# Definition: Get the last load values and golden hours.
+# Variables:
+#   scheduled_result: Aemet API information.
+#   correct_value_date: Correct date position in JSON file.
+# Created: DAVID LAHUERTA ZAYAS
 def golden_hours(scheduled_result, correct_value_date):
     sunrise = scheduled_result[0]["prediccion"]["dia"][correct_value_date]["orto"]
     sunset = scheduled_result[0]["prediccion"]["dia"][correct_value_date]["ocaso"]
@@ -26,37 +34,58 @@ def golden_hours(scheduled_result, correct_value_date):
     return f'ULTIMA ACTUALIZACION: {date}\nAMANECE:  {sunrise}\nANOCHECE: {sunset}\n\n'
 
 
-# Get the sky condition
-def sky_condition_scheduled(scheduled_result, correct_value_date, current_hour, hour=None):
+# Definition: Get the sky condition
+# Variables:
+#   scheduled_result: Aemet API information.
+#   correct_value_date: Correct date position in JSON file.
+#   current_hour: Current hour, it used to show the info from that hour when the user doesn't specify an hour.
+#   hour: Selected hour by the user.
+# Created: DAVID LAHUERTA ZAYAS
+# Modified:
+#   David Lahuerta: 29-Nov-2022: Add first and second hour to show ranges of hours
+def sky_condition_scheduled(scheduled_result, correct_value_date, current_hour, first_hour=None, second_hour=None):
     ranges = {element["periodo"]: element["descripcion"] for element in
               scheduled_result[0]["prediccion"]["dia"][correct_value_date]["estadoCielo"]}
 
     sky_condition = SKY_CONDITION
 
-    if hour is None:
+    if first_hour is None:
         for key, value in ranges.items():
             if int(key) >= current_hour:
                 sky_condition = f'{sky_condition}{key}h: {value}\n'
-    else:
+    elif second_hour is None:
         for key, value in ranges.items():
-            if hour < int(key):
+            if first_hour < int(key):
                 raise ValueError
-            elif hour == int(key):
+            elif first_hour == int(key):
                 sky_condition = f'{sky_condition}{key}h: {value}\n\n'
                 break
+    else:
+        for key, value in ranges.items():
+            if first_hour <= int(key) <= second_hour:
+                sky_condition = f'{sky_condition}{key}h: {value}\n'
 
     return sky_condition
 
 
-# Get the probability of precipitation
-def probability_precipitation_scheduled(scheduled_result, correct_value_date, current_hour, hour=None):
+# Definition: Get the probability of precipitation
+# Variables:
+#   scheduled_result: Aemet API information.
+#   correct_value_date: Correct date position in JSON file.
+#   current_hour: Current hour, it used to show the info from that hour when the user doesn't specify an hour.
+#   hour: Selected hour by the user.
+# Created: DAVID LAHUERTA ZAYAS
+# Modified:
+#   David Lahuerta: 29-Nov-2022: Add first and second hour to show ranges of hours
+def probability_precipitation_scheduled(scheduled_result, correct_value_date, current_hour,
+                                        first_hour=None, second_hour=None):
     ranges = {element["periodo"]: element["value"] for element in
               scheduled_result[0]["prediccion"]["dia"][correct_value_date]["probPrecipitacion"]}
 
     precipitation = PRECIPITATION_PROBABILITY
     check_hour = False
 
-    if hour is None:
+    if first_hour is None:
         for key, value in ranges.items():
             if current_hour <= int(key[0:2]):
                 check_hour = True
@@ -64,50 +93,78 @@ def probability_precipitation_scheduled(scheduled_result, correct_value_date, cu
             if int(key[2:4]) == 1 and check_hour is False:
                 if current_hour <= 24:
                     precipitation = f'{precipitation}Entre las: {key[0:2]}h-{key[2:4]}h: {str(value)}%\n'
-    else:
+    elif second_hour is None:
         for key, value in ranges.items():
             if int(key[2:4]) < int(key[0:2]):
                 real_hour = 24
             else:
                 real_hour = int(key[2:4])
-            if hour in range(int(key[0:2]), real_hour):
+            if first_hour in range(int(key[0:2]), real_hour):
                 precipitation = f'{precipitation}Entre las: {key[0:2]}h-{key[2:4]}h: {str(value)}%\n\n'
                 break
+    else:
+        for key, value in ranges.items():
+            if first_hour <= int(key[0:2]) <= second_hour:
+                check_hour = True
+                precipitation = f'{precipitation}Entre las: {key[0:2]}h-{key[2:4]}h: {str(value)}%\n'
+            if int(key[2:4]) == 1 and check_hour is False:
+                if second_hour <= 24:
+                    precipitation = f'{precipitation}Entre las: {key[0:2]}h-{key[2:4]}h: {str(value)}%\n'
 
     return precipitation
 
 
-# Get the precipitation hours
-def precipitation_scheduled(scheduled_result, correct_value_date, current_hour, hour=None):
+# Definition: Get the precipitation hours
+# Variables:
+#   scheduled_result: Aemet API information.
+#   correct_value_date: Correct date position in JSON file.
+#   current_hour: Current hour, it used to show the info from that hour when the user doesn't specify an hour.
+#   hour: Selected hour by the user.
+# Created: DAVID LAHUERTA ZAYAS
+# Modified:
+#   David Lahuerta: 29-Nov-2022: Add first and second hour to show ranges of hours
+def precipitation_scheduled(scheduled_result, correct_value_date, current_hour, first_hour=None, second_hour=None):
     ranges = {element["periodo"]: element["value"] for element in
               scheduled_result[0]["prediccion"]["dia"][correct_value_date]["precipitacion"]}
 
     precipitation = PRECIPITATION
 
-    if hour is None:
+    if first_hour is None:
         for key, value in ranges.items():
             if int(key) >= current_hour:
                 precipitation += f'{key}h: {value} (mm)\n'
-    else:
+    elif second_hour is None:
         for key, value in ranges.items():
-            if hour < int(key):
+            if first_hour < int(key):
                 return ""
-            elif hour == int(key):
+            elif first_hour == int(key):
                 precipitation += f'{key}h: {value} (mm)\n\n'
                 break
+    else:
+        for key, value in ranges.items():
+            if first_hour <= int(key) <= second_hour:
+                precipitation += f'{key}h: {value} (mm)\n'
 
     return precipitation
 
 
-# Get the probability of snowing
-def probability_snow_scheduled(scheduled_result, correct_value_date, current_hour, hour=None):
+# Definition: Get the probability of snowing
+# Variables:
+#   scheduled_result: Aemet API information.
+#   correct_value_date: Correct date position in JSON file.
+#   current_hour: Current hour, it used to show the info from that hour when the user doesn't specify an hour.
+#   hour: Selected hour by the user.
+# Created: DAVID LAHUERTA ZAYAS
+# Modified:
+#   David Lahuerta: 29-Nov-2022: Add first and second hour to show ranges of hours
+def probability_snow_scheduled(scheduled_result, correct_value_date, current_hour, first_hour=None, second_hour=None):
     ranges = {element["periodo"]: element["value"] for element in
               scheduled_result[0]["prediccion"]["dia"][correct_value_date]["probNieve"]}
 
     snow = SNOW_PROBABILITY
     check_hour = False
 
-    if hour is None:
+    if first_hour is None:
         for key, value in ranges.items():
             if current_hour <= int(key[0:2]):
                 check_hour = True
@@ -115,41 +172,69 @@ def probability_snow_scheduled(scheduled_result, correct_value_date, current_hou
             if int(key[2:4]) == 1 and check_hour is False:
                 if current_hour <= 24:
                     snow = f'{snow}Entre las: {key[0:2]}h-{key[2:4]}h: {str(value)}%\n'
-    else:
+    elif second_hour is None:
         for key, value in ranges.items():
             if int(key[2:4]) < int(key[0:2]):
                 real_hour = 24
             else:
                 real_hour = int(key[2:4])
-            if hour in range(int(key[0:2]), real_hour):
+            if first_hour in range(int(key[0:2]), real_hour):
                 snow = f'{snow}Entre las: {key[0:2]}h-{key[2:4]}h: {str(value)}%\n\n'
                 break
+    else:
+        for key, value in ranges.items():
+            if first_hour <= int(key[0:2]) <= second_hour:
+                check_hour = True
+                snow = f'{snow}Entre las: {key[0:2]}h-{key[2:4]}h: {str(value)}%\n'
+            if int(key[2:4]) == 1 and check_hour is False:
+                if second_hour <= 24:
+                    snow = f'{snow}Entre las: {key[0:2]}h-{key[2:4]}h: {str(value)}%\n'
 
     return snow
 
 
-# Get the snow precipitation
-def snow_scheduled(scheduled_result, correct_value_date, current_hour, hour=None):
+# Definition: Get the snow precipitation
+# Variables:
+#   scheduled_result: Aemet API information.
+#   correct_value_date: Correct date position in JSON file.
+#   current_hour: Current hour, it used to show the info from that hour when the user doesn't specify an hour.
+#   hour: Selected hour by the user.
+# Created: DAVID LAHUERTA ZAYAS
+# Modified:
+#   David Lahuerta: 29-Nov-2022: Add first and second hour to show ranges of hours
+def snow_scheduled(scheduled_result, correct_value_date, current_hour, first_hour=None, second_hour=None):
     ranges = {element["periodo"]: element["value"] for element in
               scheduled_result[0]["prediccion"]["dia"][correct_value_date]["nieve"]}
 
     snow = SNOW
 
-    if hour is None:
+    if first_hour is None:
         for key, value in ranges.items():
             if int(key) >= current_hour:
                 snow = f'{snow}{key}h: {value} (mm)\n'
-    else:
+    elif second_hour is None:
         for key, value in ranges.items():
-            if hour == int(key):
+            if first_hour == int(key):
                 snow = f'{snow}{key}h: {value} (mm)\n\n'
                 break
+    else:
+        for key, value in ranges.items():
+            if first_hour <= int(key) <= second_hour:
+                snow = f'{snow}{key}h: {value} (mm)\n'
 
     return snow
 
 
-# Get the temperature and thermal sensation
-def temperature_scheduled(scheduled_result, correct_value_date, current_hour, hour=None):
+# Definition: Get the temperature and thermal sensation
+# Variables:
+#   scheduled_result: Aemet API information.
+#   correct_value_date: Correct date position in JSON file.
+#   current_hour: Current hour, it used to show the info from that hour when the user doesn't specify an hour.
+#   hour: Selected hour by the user.
+# Created: DAVID LAHUERTA ZAYAS
+# Modified:
+#   David Lahuerta: 29-Nov-2022: Add first and second hour to show ranges of hours
+def temperature_scheduled(scheduled_result, correct_value_date, current_hour, first_hour=None, second_hour=None):
     current_temperature = {element["periodo"]: element["value"] for element in
                            scheduled_result[0]["prediccion"]["dia"][correct_value_date]["temperatura"]}
 
@@ -160,7 +245,7 @@ def temperature_scheduled(scheduled_result, correct_value_date, current_hour, ho
     thermal_temperature = ""
     final_temperature = TEMPERATURE
 
-    if hour is None:
+    if first_hour is None:
         for key_temperature, value_temperature in current_temperature.items():
             if int(key_temperature) >= current_hour:
                 temperature_values = f'{temperature_values}{key_temperature}h: Temperatura: {value_temperature}ºC;'
@@ -175,15 +260,29 @@ def temperature_scheduled(scheduled_result, correct_value_date, current_hour, ho
         for i in range(len(temperature_values) - 1):
             final_temperature = f'{final_temperature}{temperature_values[i]};{thermal_temperature[i]}\n'
 
-    else:
+    elif second_hour is None:
         for key_temperature, value_temperature in current_temperature.items():
-            if hour == int(key_temperature):
+            if first_hour == int(key_temperature):
                 final_temperature = f'{final_temperature}{key_temperature}h: Temperatura: {value_temperature}ºC;'
                 break
 
         for key, value in thermal_sensation.items():
-            if hour == int(key):
+            if first_hour == int(key):
                 final_temperature = f'{final_temperature} Sensacion termica: {value}ºC\n\n'
                 break
+    else:
+        for key_temperature, value_temperature in current_temperature.items():
+            if first_hour <= int(key_temperature) <= second_hour:
+                temperature_values = f'{temperature_values}{key_temperature}h: Temperatura: {value_temperature}ºC;'
+
+        for key, value in thermal_sensation.items():
+            if first_hour <= int(key) <= second_hour:
+                thermal_temperature = f'{thermal_temperature} Sensacion termica: {value}ºC\n'
+
+        temperature_values = temperature_values.split(";")
+        thermal_temperature = thermal_temperature.split("\n")
+
+        for i in range(len(temperature_values) - 1):
+            final_temperature = f'{final_temperature}{temperature_values[i]};{thermal_temperature[i]}\n'
 
     return final_temperature

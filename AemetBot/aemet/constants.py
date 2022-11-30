@@ -25,7 +25,7 @@ DATA_TYPE = "%Y-%m-%dT%H:%M:%S"
 VALUE_ERROR = "No se han encontrado datos."
 DATA_ERROR_MESSAGE = "Error retrieving data of"
 API_ERROR = "Error con la conexión, probar más tarde"
-NO_DATA_HOUR = "La predicción horaria para esa hora ha sido eliminada."
+NO_DATA_HOUR = "La predicción para esa hora ha sido eliminada."
 PROVINCE = "PROVINCIA DE "
 
 with open(os.path.join(_ASSETS_PATH, "credentials.json"), "r") as f:

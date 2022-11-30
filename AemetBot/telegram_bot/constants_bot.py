@@ -8,14 +8,16 @@ START_MESSAGE = "Esto es un bot para ver la predicción del tiempo en España. L
                 "\help"
 HELP_MESSAGE = "Para conocer el tiempo de una ciudad o municipio, debe escribir el nombre " \
                "de este y enviarlo.\nEjemplo: Teruel \nSi además quiere saber una hora exacta debe mandar el nombre " \
-               "de la ciudad/municipio seguido de punto y coma ';' y la hora.\nEjemplo: Teruel; 14\nTambién puede " \
-               "revisar la previsión del día siguiente utilizando el comando '\\tomorrow'\nEjemplo: \\tomorrow " \
-               "Teruel; 14 "
+               "de la ciudad/municipio seguido de punto y coma ';' y la hora.\nEjemplo: Teruel; 14\n. Si desea conocer"\
+               " la previsión para un rango de horas concreto, debe de escribir el nombre de la ciudad/municipio, " \
+               "seguido de punto y coma ';' después la primera hora, un guión '-' y la segunda hora." \
+               "\nEjemplo: Teruel; 21-23\nImportante, el rango de horas va desde las 00 hasta las 23.\nTambién puede " \
+               "revisar la previsión del día siguiente utilizando el comando '\\m'\nEjemplo: \\m Teruel; 14 "
 ERROR_MUNICIPALITY = "Formato incorrecto. Se debe mandar una ciudad/municipio, seguido de punto y coma ';' y la " \
                      "hora.\nEjemplo: Teruel; 14 "
 ERROR_NUMERIC = "Hora incorrecta"
 MUNICIPALITY_NAME_ERROR = "Problem with municipality name"
-HOUR_PROBLEM="Elimine el ';' del mensaje"
+HOUR_PROBLEM = "Rango de horas incorrecto"
 
 with open(os.path.join(_ASSETS_PATH, "credentials.json"), "r") as f:
     TOKEN = json.load(f)['TELEGRAM_BOT_KEY']

@@ -1,0 +1,112 @@
+2022-12-01 00:05:31,597; Starting new HTTPS connection (1): opendata.aemet.es:443
+2022-12-01 00:05:31,732; https://opendata.aemet.es:443 "GET /opendata/api/prediccion/especifica/municipio/horaria/44216?api_key=eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2MjM1MDNAdW5pemFyLmVzIiwianRpIjoiZjIzZmY2YTAtM2JhNy00NmE2LWE3YmItMmVmNmVjYTVlODM3IiwiaXNzIjoiQUVNRVQiLCJpYXQiOjE2NjYwNDI0NzYsInVzZXJJZCI6ImYyM2ZmNmEwLTNiYTctNDZhNi1hN2JiLTJlZjZlY2E1ZTgzNyIsInJvbGUiOiIifQ.B87g_Q2kP-ZkFXTl2h6tlz-KngEcmO28ydfnc9TA8gY HTTP/1.1" 200 175
+2022-12-01 00:05:31,736; Starting new HTTPS connection (1): opendata.aemet.es:443
+2022-12-01 00:05:31,874; https://opendata.aemet.es:443 "GET /opendata/sh/c100561d HTTP/1.1" 200 29352
+2022-12-01 00:05:31,894; <Response [200]>
+NoneType: None
+2022-12-01 00:05:31,898; Starting new HTTPS connection (1): opendata.aemet.es:443
+2022-12-01 00:05:36,678; https://opendata.aemet.es:443 "GET /opendata/api/prediccion/ccaa/manana/arn?api_key=eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2MjM1MDNAdW5pemFyLmVzIiwianRpIjoiZjIzZmY2YTAtM2JhNy00NmE2LWE3YmItMmVmNmVjYTVlODM3IiwiaXNzIjoiQUVNRVQiLCJpYXQiOjE2NjYwNDI0NzYsInVzZXJJZCI6ImYyM2ZmNmEwLTNiYTctNDZhNi1hN2JiLTJlZjZlY2E1ZTgzNyIsInJvbGUiOiIifQ.B87g_Q2kP-ZkFXTl2h6tlz-KngEcmO28ydfnc9TA8gY HTTP/1.1" 200 175
+2022-12-01 00:05:36,682; Starting new HTTPS connection (1): opendata.aemet.es:443
+2022-12-01 00:05:37,133; https://opendata.aemet.es:443 "GET /opendata/sh/24dcf76c HTTP/1.1" 200 1020
+2022-12-01 00:05:37,136; <Response [200]>
+NoneType: None
+2022-12-01 00:05:37,140; Starting new HTTPS connection (1): opendata.aemet.es:443
+2022-12-01 00:05:37,283; https://opendata.aemet.es:443 "GET /opendata/api/prediccion/provincia/hoy/44/elaboracion/2022-12-01?api_key=eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2MjM1MDNAdW5pemFyLmVzIiwianRpIjoiZjIzZmY2YTAtM2JhNy00NmE2LWE3YmItMmVmNmVjYTVlODM3IiwiaXNzIjoiQUVNRVQiLCJpYXQiOjE2NjYwNDI0NzYsInVzZXJJZCI6ImYyM2ZmNmEwLTNiYTctNDZhNi1hN2JiLTJlZjZlY2E1ZTgzNyIsInJvbGUiOiIifQ.B87g_Q2kP-ZkFXTl2h6tlz-KngEcmO28ydfnc9TA8gY HTTP/1.1" 200 84
+2022-12-01 00:05:37,287; Starting new HTTPS connection (1): opendata.aemet.es:443
+2022-12-01 00:05:37,900; https://opendata.aemet.es:443 "GET /opendata/api/prediccion/provincia/hoy/44?api_key=eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2MjM1MDNAdW5pemFyLmVzIiwianRpIjoiZjIzZmY2YTAtM2JhNy00NmE2LWE3YmItMmVmNmVjYTVlODM3IiwiaXNzIjoiQUVNRVQiLCJpYXQiOjE2NjYwNDI0NzYsInVzZXJJZCI6ImYyM2ZmNmEwLTNiYTctNDZhNi1hN2JiLTJlZjZlY2E1ZTgzNyIsInJvbGUiOiIifQ.B87g_Q2kP-ZkFXTl2h6tlz-KngEcmO28ydfnc9TA8gY HTTP/1.1" 200 175
+2022-12-01 00:05:37,904; Starting new HTTPS connection (1): opendata.aemet.es:443
+2022-12-01 00:05:38,276; https://opendata.aemet.es:443 "GET /opendata/sh/43629f9a HTTP/1.1" 200 736
+2022-12-01 00:05:38,277; <Response [200]>
+Traceback (most recent call last):
+  File "/home/dlahuerta/Projects/SpanishWeatherBot/AemetBot/aemet/apifunctions.py", line 38, in get_daily_provincial_prediction
+    response = get_json_information(url).text
+               ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/dlahuerta/Projects/SpanishWeatherBot/AemetBot/aemet/apifunctions.py", line 61, in get_json_information
+    result = requests.get(response.json()["datos"])
+                          ~~~~~~~~~~~~~~~^^^^^^^^^
+KeyError: 'datos'
+2022-12-01 00:07:10,841; Starting new HTTPS connection (1): opendata.aemet.es:443
+2022-12-01 00:07:10,965; https://opendata.aemet.es:443 "GET /opendata/api/prediccion/especifica/municipio/horaria/44216?api_key=eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2MjM1MDNAdW5pemFyLmVzIiwianRpIjoiZjIzZmY2YTAtM2JhNy00NmE2LWE3YmItMmVmNmVjYTVlODM3IiwiaXNzIjoiQUVNRVQiLCJpYXQiOjE2NjYwNDI0NzYsInVzZXJJZCI6ImYyM2ZmNmEwLTNiYTctNDZhNi1hN2JiLTJlZjZlY2E1ZTgzNyIsInJvbGUiOiIifQ.B87g_Q2kP-ZkFXTl2h6tlz-KngEcmO28ydfnc9TA8gY HTTP/1.1" 200 175
+2022-12-01 00:07:10,969; Starting new HTTPS connection (1): opendata.aemet.es:443
+2022-12-01 00:07:11,092; https://opendata.aemet.es:443 "GET /opendata/sh/c100561d HTTP/1.1" 200 29352
+2022-12-01 00:07:11,109; <Response [200]>
+NoneType: None
+2022-12-01 00:07:11,114; Starting new HTTPS connection (1): opendata.aemet.es:443
+2022-12-01 00:07:11,490; https://opendata.aemet.es:443 "GET /opendata/api/prediccion/ccaa/manana/arn?api_key=eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2MjM1MDNAdW5pemFyLmVzIiwianRpIjoiZjIzZmY2YTAtM2JhNy00NmE2LWE3YmItMmVmNmVjYTVlODM3IiwiaXNzIjoiQUVNRVQiLCJpYXQiOjE2NjYwNDI0NzYsInVzZXJJZCI6ImYyM2ZmNmEwLTNiYTctNDZhNi1hN2JiLTJlZjZlY2E1ZTgzNyIsInJvbGUiOiIifQ.B87g_Q2kP-ZkFXTl2h6tlz-KngEcmO28ydfnc9TA8gY HTTP/1.1" 200 175
+2022-12-01 00:07:11,495; Starting new HTTPS connection (1): opendata.aemet.es:443
+2022-12-01 00:07:11,910; https://opendata.aemet.es:443 "GET /opendata/sh/24dcf76c HTTP/1.1" 200 1020
+2022-12-01 00:07:11,912; <Response [200]>
+NoneType: None
+2022-12-01 00:07:11,916; Starting new HTTPS connection (1): opendata.aemet.es:443
+2022-12-01 00:07:12,051; https://opendata.aemet.es:443 "GET /opendata/api/prediccion/provincia/hoy/44/elaboracion/2022-12-01?api_key=eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2MjM1MDNAdW5pemFyLmVzIiwianRpIjoiZjIzZmY2YTAtM2JhNy00NmE2LWE3YmItMmVmNmVjYTVlODM3IiwiaXNzIjoiQUVNRVQiLCJpYXQiOjE2NjYwNDI0NzYsInVzZXJJZCI6ImYyM2ZmNmEwLTNiYTctNDZhNi1hN2JiLTJlZjZlY2E1ZTgzNyIsInJvbGUiOiIifQ.B87g_Q2kP-ZkFXTl2h6tlz-KngEcmO28ydfnc9TA8gY HTTP/1.1" 200 84
+2022-12-01 00:07:12,057; Starting new HTTPS connection (1): opendata.aemet.es:443
+2022-12-01 00:07:12,381; https://opendata.aemet.es:443 "GET /opendata/api/prediccion/provincia/hoy/44?api_key=eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2MjM1MDNAdW5pemFyLmVzIiwianRpIjoiZjIzZmY2YTAtM2JhNy00NmE2LWE3YmItMmVmNmVjYTVlODM3IiwiaXNzIjoiQUVNRVQiLCJpYXQiOjE2NjYwNDI0NzYsInVzZXJJZCI6ImYyM2ZmNmEwLTNiYTctNDZhNi1hN2JiLTJlZjZlY2E1ZTgzNyIsInJvbGUiOiIifQ.B87g_Q2kP-ZkFXTl2h6tlz-KngEcmO28ydfnc9TA8gY HTTP/1.1" 200 175
+2022-12-01 00:07:12,385; Starting new HTTPS connection (1): opendata.aemet.es:443
+2022-12-01 00:07:12,713; https://opendata.aemet.es:443 "GET /opendata/sh/43629f9a HTTP/1.1" 200 736
+2022-12-01 00:07:12,714; <Response [200]>
+Traceback (most recent call last):
+  File "/home/dlahuerta/Projects/SpanishWeatherBot/AemetBot/aemet/apifunctions.py", line 38, in get_daily_provincial_prediction
+    response = get_json_information(url).text
+               ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/dlahuerta/Projects/SpanishWeatherBot/AemetBot/aemet/apifunctions.py", line 61, in get_json_information
+    result = requests.get(response.json()["datos"])
+                          ~~~~~~~~~~~~~~~^^^^^^^^^
+KeyError: 'datos'
+2022-12-01 00:10:39,158; Setting singleton dispatcher as <telegram.ext.dispatcher.Dispatcher object at 0x7fad0dcf1160>
+2022-12-01 00:10:39,160; Scheduler started
+2022-12-01 00:10:39,161; Looking for jobs to run
+2022-12-01 00:10:39,161; No jobs; waiting until a job is added
+2022-12-01 00:10:39,161; Entering: get_me
+2022-12-01 00:10:39,364; {'is_bot': True, 'id': 5667292163, 'can_join_groups': True, 'can_read_all_group_messages': False, 'first_name': 'SpainWeatherBot', 'username': 'SpainWeatherBot', 'supports_inline_queries': False}
+2022-12-01 00:10:39,365; Exiting: get_me
+2022-12-01 00:10:39,365; Bot:5667292163:dispatcher - started
+2022-12-01 00:10:39,367; Bot:5667292163:updater - started
+2022-12-01 00:10:39,367; Waiting for Dispatcher and polling to start
+2022-12-01 00:10:39,367; Updater thread started (polling)
+2022-12-01 00:10:39,369; Start network loop retry bootstrap del webhook
+2022-12-01 00:10:39,370; Dispatcher started
+2022-12-01 00:10:39,370; Deleting webhook
+2022-12-01 00:10:39,370; Entering: delete_webhook
+2022-12-01 00:10:39,418; True
+2022-12-01 00:10:39,418; Exiting: delete_webhook
+2022-12-01 00:10:39,418; Bootstrap done
+2022-12-01 00:10:39,418; Start network loop retry getting Updates
+2022-12-01 00:10:39,418; Entering: get_updates
+2022-12-01 00:10:44,073; Error while getting Updates: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2022-12-01 00:10:44,074; Processing Update: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2022-12-01 00:10:44,074; Update None caused error Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2022-12-01 00:10:45,574; Entering: get_updates
+2022-12-01 00:10:47,452; Received signal 2 (SIGINT), stopping...
+2022-12-01 00:10:47,453; Scheduler has been shut down
+2022-12-01 00:10:47,453; Looking for jobs to run
+2022-12-01 00:10:47,453; No jobs; waiting until a job is added
+2022-12-01 00:10:47,453; Stopping Updater and Dispatcher...
+2022-12-01 00:10:47,453; Requesting Dispatcher to stop...
+2022-12-01 00:10:47,830; Exiting immediately!
+2022-12-01 00:12:37,071; Setting singleton dispatcher as <telegram.ext.dispatcher.Dispatcher object at 0x7f1942da1160>
+2022-12-01 00:12:37,071; Scheduler started
+2022-12-01 00:12:37,072; Looking for jobs to run
+2022-12-01 00:12:37,072; No jobs; waiting until a job is added
+2022-12-01 00:12:37,072; Entering: get_me
+2022-12-01 00:12:37,250; {'first_name': 'SpainWeatherBot', 'supports_inline_queries': False, 'can_read_all_group_messages': False, 'username': 'SpainWeatherBot', 'can_join_groups': True, 'is_bot': True, 'id': 5667292163}
+2022-12-01 00:12:37,250; Exiting: get_me
+2022-12-01 00:12:37,251; Bot:5667292163:dispatcher - started
+2022-12-01 00:12:37,251; Bot:5667292163:updater - started
+2022-12-01 00:12:37,251; Waiting for Dispatcher and polling to start
+2022-12-01 00:12:37,252; Updater thread started (polling)
+2022-12-01 00:12:37,252; Start network loop retry bootstrap del webhook
+2022-12-01 00:12:37,252; Deleting webhook
+2022-12-01 00:12:37,252; Entering: delete_webhook
+2022-12-01 00:12:37,253; Dispatcher started
+2022-12-01 00:12:37,298; True
+2022-12-01 00:12:37,298; Exiting: delete_webhook
+2022-12-01 00:12:37,298; Bootstrap done
+2022-12-01 00:12:37,298; Start network loop retry getting Updates
+2022-12-01 00:12:37,298; Entering: get_updates
+2022-12-01 00:12:39,356; Received signal 2 (SIGINT), stopping...
+2022-12-01 00:12:39,357; Scheduler has been shut down
+2022-12-01 00:12:39,357; Looking for jobs to run
+2022-12-01 00:12:39,357; No jobs; waiting until a job is added
+2022-12-01 00:12:39,357; Stopping Updater and Dispatcher...
+2022-12-01 00:12:39,357; Requesting Dispatcher to stop...
+2022-12-01 00:12:39,517; Exiting immediately!

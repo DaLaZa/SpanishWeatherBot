@@ -1,4 +1,6 @@
 # Imports
+import sys
+sys.path.append("../..")
 import requests
 from AemetBot.utils.logger import logger
 import pandas as pd
@@ -11,32 +13,58 @@ querystring = {"api_key": AEMET_API_KEY}
 headers = {'cache-control': "no-cache"}
 
 
+# Definition: Get the API respone
+# Variables:
+#   url: Aemet API url
+# Created: DAVID LAHUERTA ZAYAS
 def get_response(url):
     return requests.request("GET", url, headers=headers, params=querystring)
 
 
+# Definition: Get the community code
+# Variables:
+#   community: Community name
+#   conn: Database connection
+# Created: DAVID LAHUERTA ZAYAS
+# Modified:
+#   DAVID LAHUERTA 28-Nov-2022: Add quotes into the query.
 def get_community_code(community, conn):
     cursor = conn.cursor()
-    cursor.execute(f'SELECT abbreviation FROM communities WHERE code = {community}')
+    cursor.execute(f'SELECT abbreviation FROM communities WHERE code = "{community}"')
     return cursor.fetchone()[0]
 
 
+# Definition: Get the province name
+# Variables:
+#   community: Province code
+#   conn: Database connection
+# Created: DAVID LAHUERTA ZAYAS
+# Modified:
+#   DAVID LAHUERTA 28-Nov-2022: Add quotes into the query.
 def get_province_name(province, conn):
     cursor = conn.cursor()
-    cursor.execute(f'SELECT province FROM communities WHERE code = {province}')
+    select = f'SELECT province FROM communities WHERE code = "{province}"'
+    cursor.execute(select)
     return cursor.fetchone()[0]
 
 
+# Definition: Get the comunity name
+# Variables:
+#   province: Province code
+#   conn: Database connection
+# Created: DAVID LAHUERTA ZAYAS
+# Modified:
+#   DAVID LAHUERTA 28-Nov-2022: Add quotes into the query.
 def get_community_name(province, conn):
     cursor = conn.cursor()
-    cursor.execute(f'SELECT community FROM communities WHERE code = {province}')
+    cursor.execute(f'SELECT community FROM communities WHERE code = "{province}"')
     return cursor.fetchone()[0]
 
 
-def get_province_municipality_code(municipality, id_column):
-    return get_all_xls_codes(municipality, id_column)
-
-
+# Definition: Set the correct format for the xls file
+# Variables:
+#   row: Row number of the xls file
+# Created: DAVID LAHUERTA ZAYAS
 def set_correct_xls_format(row):
     new_column = f'{row.CPRO}{row.CMUN}'
     row["CodeId"] = new_column
@@ -44,6 +72,10 @@ def set_correct_xls_format(row):
     return row
 
 
+# Definition: Treat the municipality name to find it into the xls file
+# Variables:
+#   municipality: Municipality name
+# Created: DAVID LAHUERTA ZAYAS
 def name_data_treatment(municipality):
     # Remove accents for the municipality
     treated_string = ''.join(c for c in unicodedata.normalize('NFD', municipality) if unicodedata.category(c) != 'Mn')
@@ -57,10 +89,18 @@ def name_data_treatment(municipality):
     return treated_string
 
 
+# Definition: Order municipality name, put the first string after the coma
+# Variables:
+#   municipality: Municipality name
+# Created: DAVID LAHUERTA ZAYAS
 def order_city_name(municipality):
     return ' '.join(municipality.split(",")[::-1])
 
 
+# Definition: Get all municipality codes from the xls and give them the correct format and return the correct value.
+# Variables:
+#   municipality: Municipality name
+# Created: DAVID LAHUERTA ZAYAS
 def get_all_xls_codes(municipality):
     try:
         data_frame = pd.read_excel(MUNICIPALITY_FILE, dtype=str)
