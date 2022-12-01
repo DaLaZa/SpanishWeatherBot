@@ -3,7 +3,7 @@ sys.path.append("../..")
 from AemetBot.aemet.final_forecast import get_complete_forecast, get_scheduled_forecast
 from AemetBot.utils.logger import logger
 from AemetBot.telegram_bot.constants_bot import HELP_MESSAGE, ERROR_NUMERIC, TOKEN, \
-    ERROR_MUNICIPALITY, MUNICIPALITY_NAME_ERROR, START_MESSAGE, HOUR_PROBLEM
+    ERROR_MUNICIPALITY, MUNICIPALITY_NAME_ERROR, START_MESSAGE, HOUR_PROBLEM, NO_DATA_HOUR
 from telegram.ext import *
 
 
@@ -43,6 +43,7 @@ def tomorrow_command(update, context):
     try:
         municipality, first_hour, second_hour = handle_response(update, text)
     except ValueError:
+        update.message.reply_text(NO_DATA_HOUR.upper())
         return None
 
     if first_hour is None:
