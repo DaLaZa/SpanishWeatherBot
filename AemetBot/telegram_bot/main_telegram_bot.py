@@ -32,6 +32,7 @@ def help_command(update, context):
 # Created: DAVID LAHUERTA ZAYAS
 # Modified:
 #   David Lahuerta: 30-Nov-2022: Add first and second hour to show ranges of hours
+#   David Lahuerta: 01-Dec-2022: Cast to int first_hour
 def tomorrow_command(update, context):
     # Get basic info of the incoming message
     text = str(update.message.text)

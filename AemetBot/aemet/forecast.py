@@ -43,6 +43,7 @@ def golden_hours(scheduled_result, correct_value_date):
 # Created: DAVID LAHUERTA ZAYAS
 # Modified:
 #   David Lahuerta: 29-Nov-2022: Add first and second hour to show ranges of hours
+#   David Lahuerta: 01-Dec-2022: Check if no data and return error
 def sky_condition_scheduled(scheduled_result, correct_value_date, current_hour, first_hour=None, second_hour=None):
     ranges = {element["periodo"]: element["descripcion"] for element in
               scheduled_result[0]["prediccion"]["dia"][correct_value_date]["estadoCielo"]}
