@@ -64,8 +64,15 @@ def get_scheduled_info(municipality_cod, date_time, current_hour, first_hour=Non
 # Created: DAVID LAHUERTA ZAYAS
 # Modified:
 #   David Lahuerta: 29-Nov-2022: Add get_scheduled_info to get the scheduled prediction
+#   David Lahuerta: 13-Dec-2022: Get the correct community and province prediction
 def get_complete_forecast(municipality, period=None):
+    date_today_format = "%Y-%m-%d %H:%M:%S.%f"
     date_time = datetime.today()
+    yesterday_time = datetime.today() - timedelta(1)
+    tomorrow_time = datetime.today() + timedelta(1)
+    yesterday = str(yesterday_time.strptime(str(yesterday_time), date_today_format).strftime("%Y-%m-%d"))
+    today = str(date_time.strptime(str(date_time), date_today_format).strftime("%Y-%m-%d"))
+    tomorrow = str(tomorrow_time.strptime(str(tomorrow_time), date_today_format).strftime("%Y-%m-%d"))
     current_hour = datetime.now().hour
 
     if period is not None and period.lower() == 'tomorrow':
@@ -111,8 +118,19 @@ def get_complete_forecast(municipality, period=None):
         return NO_DATA_HOUR.upper()
 
     # Get community prediction
+    if period is not None and period.lower() == 'tomorrow':
+        try:
+            community_prediction = get_community_prediction(abbreviation, today)
+        except ValueError:
+            logger.error(f'{DATA_ERROR_MESSAGE} province prediction API', exc_info=True)
+            return API_ERROR
+    else:
+        try:
+            community_prediction = get_community_prediction(abbreviation, yesterday)
+        except ValueError:
+            logger.error(f'{DATA_ERROR_MESSAGE} province prediction API', exc_info=True)
+            return API_ERROR
     try:
-        community_prediction = get_community_prediction(abbreviation)
         # Give a correct format to the community_prediction
         community_prediction = re.split('\\bA\.- \\b', community_prediction)[-1]
         community_prediction = community_prediction.replace("B.- ", "")
@@ -121,8 +139,19 @@ def get_complete_forecast(municipality, period=None):
         return API_ERROR
 
     # Get province prediction
+    if period is not None and period.lower() == 'tomorrow':
+        try:
+            province_prediction = get_tomorrow_daily_provincial_prediction(province_cod)
+        except ValueError:
+            logger.error(f'{DATA_ERROR_MESSAGE} province prediction API', exc_info=True)
+            return API_ERROR
+    else:
+        try:
+            province_prediction = get_daily_provincial_prediction(province_cod, today)
+        except ValueError:
+            logger.error(f'{DATA_ERROR_MESSAGE} province prediction API', exc_info=True)
+            return API_ERROR
     try:
-        province_prediction = get_daily_provincial_prediction(province_cod)
         # Give a correct format to the province_prediction
         province_prediction = re.split(f'\\b{province.upper()}\\b', province_prediction)[-1]
         province_prediction = re.split(f'\\b{TEMPERATURES}\\b', province_prediction)[0]
