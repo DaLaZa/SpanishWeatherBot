@@ -20,8 +20,11 @@ def get_scheduled_prediction(municipality_cod):
 # Definition: API call to return the text with the daily provincial prediction
 # Variables:
 #   province: Province code
+#   date: Format date to get the API results
 # Created: DAVID LAHUERTA ZAYAS
-def get_daily_provincial_prediction(province):
+# Modified:
+#   David Lahuerta: 13-Dec-2022: Add date
+def get_daily_provincial_prediction(province, date):
     if province == "07":
         province = "072"
     elif province == "35":
@@ -29,12 +32,8 @@ def get_daily_provincial_prediction(province):
     elif province == "38":
         province = "382"
 
-    date_time = datetime.today()
-    date_today_format = "%Y-%m-%d %H:%M:%S.%f"
-    date_today = str(datetime.strptime(str(date_time), date_today_format).strftime("%Y-%m-%d"))
-
     try:
-        url = DAILY_PROVINCIAL_PREDICTION_DATE.format(province=province, date=date_today)
+        url = DAILY_PROVINCIAL_PREDICTION_DATE.format(province=province, date=date)
         response = get_json_information(url).text
     except KeyError:
         url = DAILY_PROVINCIAL_PREDICTION.format(province=province)
@@ -43,13 +42,44 @@ def get_daily_provincial_prediction(province):
     return response
 
 
-# Definition: API call to return the text with the daily community prediction
+# Definition: API call to return the text with tomorrow daily provincial prediction
+# Variables:
+#   province: Province code
+# Created: DAVID LAHUERTA ZAYAS
+def get_tomorrow_daily_provincial_prediction(province):
+    if province == "07":
+        province = "072"
+    elif province == "35":
+        province = "353"
+    elif province == "38":
+        province = "382"
+
+    try:
+        url = TOMORROW_DAILY_PROVINCIAL_PREDICTION.format(province=province)
+        response = get_json_information(url).text
+    except KeyError:
+        url = DAILY_PROVINCIAL_PREDICTION.format(province=province)
+        response = get_json_information(url).text
+
+    return response
+
+
+# Definition: API call to return the text with daily community prediction
 # Variables:
 #   community: Community code
+#   date: Format date to get the API results
 # Created: DAVID LAHUERTA ZAYAS
-def get_community_prediction(community):
-    url = COMMUNITY_PREDICTION.format(community=community)
-    return get_json_information(url).text
+# Modified:
+#   David Lahuerta: 13-Dec-2022: Add date
+def get_community_prediction(community, date):
+    try:
+        url = TODAY_COMMUNITY_PREDICTION.format(community=community, date=date)
+        response = get_json_information(url).text
+    except KeyError:
+        url = COMMUNITY_PREDICTION.format(community=community)
+        response = get_json_information(url).text
+
+    return response
 
 
 # Definition: Call to get the API respone
