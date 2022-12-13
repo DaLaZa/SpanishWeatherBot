@@ -85,6 +85,7 @@ def sky_condition_scheduled(scheduled_result, correct_value_date, current_hour, 
 # Modified:
 #   David Lahuerta: 29-Nov-2022: Add first and second hour to show ranges of hours
 #   David Lahuerta: 11-Dec-2022: Add ranges to show the correct scheduled forecast prediction
+#   David Lahuerta: 13-Dec-2022: When first_hour is None, change the if hour condition
 def probability_precipitation_scheduled(scheduled_result, correct_value_date, current_hour,
                                         first_hour=None, second_hour=None):
     ranges = {element["periodo"]: element["value"] for element in
@@ -95,7 +96,11 @@ def probability_precipitation_scheduled(scheduled_result, correct_value_date, cu
 
     if first_hour is None:
         for key, value in ranges.items():
-            if current_hour <= int(key[0:2]):
+            if int(key[2:4]) == 1:
+                last_range = 24
+            else:
+                last_range = int(key[2:4])
+            if current_hour <= last_range:
                 check_hour = True
                 precipitation = f'{precipitation}Entre las: {key[0:2]}h-{key[2:4]}h: {str(value)}%\n'
             if int(key[2:4]) == 1 and check_hour is False:
@@ -176,6 +181,7 @@ def precipitation_scheduled(scheduled_result, correct_value_date, current_hour, 
 # Modified:
 #   David Lahuerta: 29-Nov-2022: Add first and second hour to show ranges of hours
 #   David Lahuerta: 11-Dec-2022: Add ranges to show the correct scheduled forecast prediction
+#   David Lahuerta: 13-Dec-2022: When first_hour is None, change the if hour condition
 def probability_snow_scheduled(scheduled_result, correct_value_date, current_hour, first_hour=None, second_hour=None):
     ranges = {element["periodo"]: element["value"] for element in
               scheduled_result[0]["prediccion"]["dia"][correct_value_date]["probNieve"]}
@@ -185,7 +191,11 @@ def probability_snow_scheduled(scheduled_result, correct_value_date, current_hou
 
     if first_hour is None:
         for key, value in ranges.items():
-            if current_hour <= int(key[0:2]):
+            if int(key[2:4]) == 1:
+                last_range = 24
+            else:
+                last_range = int(key[2:4])
+            if current_hour <= last_range:
                 check_hour = True
                 snow = f'{snow}Entre las: {key[0:2]}h-{key[2:4]}h: {str(value)}%\n'
             if int(key[2:4]) == 1 and check_hour is False:

@@ -11,7 +11,6 @@ SCHEDULED_PREDICTION = API_URL + "/prediccion/especifica/municipio/horaria/{codi
 DAILY_PROVINCIAL_PREDICTION_DATE = API_URL + "/prediccion/provincia/hoy/{province}/elaboracion/{date}"
 DAILY_PROVINCIAL_PREDICTION = API_URL + "/prediccion/provincia/hoy/{province}"
 COMMUNITY_PREDICTION = API_URL + "/prediccion/ccaa/manana/{community}"
-DATA_STATION = API_URL + "/observacion/convencional/datos/estacion/8368U"
 TEMPERATURES = "TEMPERATURAS"
 DATA_BASE_NAME = os.path.join(_ASSETS_PATH, "community_codes.db")
 MUNICIPALITY_FILE = os.path.join(_ASSETS_PATH, "municipalityCodes.xls")
