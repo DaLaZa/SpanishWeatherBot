@@ -87,7 +87,11 @@ def get_community_prediction(community, date):
 #   url: Aemet API url
 # Created: DAVID LAHUERTA ZAYAS
 def get_json_information(url):
-    response = requests.request("GET", url, headers=headers, params=querystring)
+    try:
+        response = requests.request("GET", url, headers=headers, params=querystring)
+    except requests.exceptions.SSLError:
+        logger.error(f'{DATA_ERROR_MESSAGE} url: {url}', exc_info=True)
+        raise ValueError
     result = requests.get(response.json()["datos"])
     logger.info(result, exc_info=True)
     return result
